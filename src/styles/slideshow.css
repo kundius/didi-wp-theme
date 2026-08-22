@@ -1,0 +1,45 @@
+.wp-block-slideshow {
+  --aspect-ratio: auto;
+}
+
+.slideshow__container {
+  display: flex;
+  overflow: hidden;
+}
+
+.slideshow__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.slideshow__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--aspect-ratio);
+  object-fit: cover;
+}
+
+.slideshow__nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.embla-nav-button {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #f0f0f0;
+  color: #000;
+  cursor: pointer;
+}
+
+.embla-nav-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

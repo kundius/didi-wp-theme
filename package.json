@@ -1,0 +1,26 @@
+{
+  "name": "didi-wp-theme",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-custom-media": "^11.0.5",
+    "postcss-nested": "^7.0.2",
+    "@csstools/postcss-global-data": "^3.1.0",
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "embla-carousel": "^8.5.1",
+    "fslightbox": "^3.4.2",
+    "maska": "^3.1.1",
+    "micromodal": "^0.4.10",
+    "normalize.css": "^8.0.1",
+    "throttle-debounce": "^5.0.2"
+  }
+}
