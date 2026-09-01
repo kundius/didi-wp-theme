@@ -129,9 +129,11 @@ Template Name: Лендинг
                     <?php endif; ?>
 
                     <?php if (!empty($feature['image'])): ?>
-                      <img class="landing-services__feature-image"
+                    <div class="landing-services__feature-image">
+                      <img
                         src="<?php echo esc_url(wp_get_attachment_image_url($feature['image'], 'medium')); ?>"
                         alt="" />
+                    </div>
                     <?php endif; ?>
 
                     <?php if (!empty($feature['bottom_text'])): ?>

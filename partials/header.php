@@ -35,8 +35,7 @@
         <?php $max_link = carbon_get_theme_option('crb_theme_max_link'); ?>
         <?php if ($max_link): ?>
         <a class="header-max" href="<?php echo esc_url($max_link); ?>">
-          <span class="header-max__icon icon icon-max"></span>
-          <span class="header-max__text">MAX</span>
+          <span class="icon icon-max"></span>
         </a>
         <?php endif; ?>
       </div>
