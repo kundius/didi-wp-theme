@@ -466,6 +466,7 @@ Template Name: Лендинг
     </section>
     <?php endif; ?>
 
+    <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
     <div class="page-layout__body">
       <div class="container">
         <div class="page-content">
@@ -473,6 +474,7 @@ Template Name: Лендинг
         </div>
       </div>
     </div>
+    <?php endif; ?>
 
     <div class="page-layout__spacer"></div>
 

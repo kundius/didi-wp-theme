@@ -1,71 +1,75 @@
 <footer class="footer">
-  <?php $footer_site_name = carbon_get_theme_option('crb_theme_site_name'); ?>
-  <h2 class="footer__title"><?php echo esc_html(
-    $footer_site_name ?: get_bloginfo('name'),
-  ); ?></h2>
+  <div class="container">
+    <?php $footer_site_name = carbon_get_theme_option('crb_theme_site_name'); ?>
+    <h2 class="footer__title"><?php echo esc_html(
+      $footer_site_name ?: get_bloginfo('name'),
+    ); ?></h2>
 
-  <div class="footer__contacts">
-    <?php $footer_phone = carbon_get_theme_option('crb_theme_phone_number'); ?>
-    <?php if ($footer_phone): ?>
-      <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
-        <?php echo esc_html($footer_phone); ?>
-      </a>
+    <div class="footer__contacts">
+      <?php $footer_phone = carbon_get_theme_option('crb_theme_phone_number'); ?>
+      <?php if ($footer_phone): ?>
+        <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
+          <?php echo esc_html($footer_phone); ?>
+        </a>
+      <?php endif; ?>
+
+      <?php $footer_email = carbon_get_theme_option('crb_theme_email'); ?>
+      <?php if ($footer_email): ?>
+        <a href="mailto:<?php echo esc_attr($footer_email); ?>">
+          Email: <?php echo esc_html($footer_email); ?>
+        </a>
+      <?php endif; ?>
+    </div>
+
+    <?php $footer_address = carbon_get_theme_option('crb_theme_address'); ?>
+    <?php if ($footer_address): ?>
+      <div class="footer__address"><?php echo nl2br(esc_html($footer_address)); ?></div>
     <?php endif; ?>
 
-    <?php $footer_email = carbon_get_theme_option('crb_theme_email'); ?>
-    <?php if ($footer_email): ?>
-      <a href="mailto:<?php echo esc_attr($footer_email); ?>">
-        Email: <?php echo esc_html($footer_email); ?>
-      </a>
+    <?php $footer_counters = carbon_get_theme_option('crb_theme_counters'); ?>
+    <?php if ($footer_counters): ?>
+      <div class="footer__counters"><?php echo $footer_counters; ?></div>
     <?php endif; ?>
   </div>
-
-  <?php $footer_address = carbon_get_theme_option('crb_theme_address'); ?>
-  <?php if ($footer_address): ?>
-    <div class="footer__address"><?php echo nl2br(esc_html($footer_address)); ?></div>
-  <?php endif; ?>
-
-  <?php $footer_counters = carbon_get_theme_option('crb_theme_counters'); ?>
-  <?php if ($footer_counters): ?>
-    <div class="footer__counters"><?php echo $footer_counters; ?></div>
-  <?php endif; ?>
 </footer>
 
 <div class="bottom-footer">
-  <div class="bottom-footer__copyright">
-    <?php $bottom_copyright = carbon_get_theme_option('crb_theme_copyright'); ?>
-    <?php echo esc_html(
-      $bottom_copyright ?: '© ' . get_bloginfo('name') . ' ' . date('Y'),
-    ); ?>
-  </div>
-
-  <div class="bottom-footer__links">
-    <?php wp_nav_menu([
-      'theme_location' => 'menu-footer',
-      'container' => null,
-      'menu_class' => 'bottom-footer__nav',
-      'depth' => 1,
-    ]); ?>
-  </div>
-
-  <div class="bottom-footer__right">
-    <div class="bottom-footer__time" data-clock>
-      <span data-clock-time>--:--</span>
-      <span data-clock-date></span>
-      <span class="city">МСК</span>
+  <div class="bottom-footer__container">
+    <div class="bottom-footer__copyright">
+      <?php $bottom_copyright = carbon_get_theme_option('crb_theme_copyright'); ?>
+      <?php echo esc_html(
+        $bottom_copyright ?: '© ' . get_bloginfo('name') . ' ' . date('Y'),
+      ); ?>
     </div>
 
-    <a href="#" class="bottom-footer__logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-        </svg>
-      </span>
-      <span class="logo-text">
-        <span class="small">Сделано в</span>
-        <span class="brand">ДОМЕНАРТ</span>
-      </span>
-    </a>
+    <div class="bottom-footer__links">
+      <?php wp_nav_menu([
+        'theme_location' => 'menu-footer',
+        'container' => null,
+        'menu_class' => 'bottom-footer__nav',
+        'depth' => 1,
+      ]); ?>
+    </div>
+
+    <div class="bottom-footer__right">
+      <div class="bottom-footer__time" data-clock>
+        <span data-clock-time>--:--</span>
+        <span data-clock-date></span>
+        <span class="city">МСК</span>
+      </div>
+
+      <a href="#" class="bottom-footer__logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="small">Сделано в</span>
+          <span class="brand">ДОМЕНАРТ</span>
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 
