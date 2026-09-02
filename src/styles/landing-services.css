@@ -1,5 +1,5 @@
 .landing-services {
-  background-color: #d5dfe7;
+  background-color: rgb(183, 202, 213);
   padding: 80px 0;
   position: relative;
   z-index: 20;
@@ -15,14 +15,13 @@
   margin: 0 0 48px;
   text-align: center;
   font-size: 48px;
-  line-height: 1;
   text-transform: uppercase;
   color: #061151;
   font-weight: 300;
 }
 
 .landing-services__grid {
-  gap: 30px;
+  gap: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -31,8 +30,7 @@
   position: relative;
   z-index: 1;
   max-width: 100%;
-  padding: 30px;
-  border-radius: 24px;
+  padding: 70px 40px;
 }
 
 .landing-services__card::before {
@@ -41,8 +39,8 @@
   inset: 0;
   z-index: -1;
   background-color: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+  box-shadow: 0px 0px 16.2px 1.8px rgba(108, 150, 136, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -52,15 +50,15 @@
 
 .landing-services__card-top {
   display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
+  gap: 24px;
+  margin-bottom: 74px;
 }
 
 .landing-services__image {
-  width: 200px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 24px;
   flex-shrink: 0;
 }
 
@@ -71,12 +69,15 @@
 }
 
 .landing-services__card-title {
-  margin: 0 0 12px;
+  margin: -4px 0 10px;
+  max-width: 240px;
   font-size: 18px;
   font-weight: normal;
   color: rgb(0, 0, 0);
-  line-height: 1.2;
   transition: color 0.2s ease;
+  /* 2 строки */
+  height: calc(18px * 1.2 * 2);
+  overflow: hidden;
 }
 
 .landing-services__card:hover .landing-services__card-title {
@@ -84,12 +85,11 @@
 }
 
 .landing-services__desc {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
+  max-width: 240px;
   font-size: 16px;
   color: rgb(109, 109, 111);
-  line-height: 1.2;
   font-weight: 300;
-  margin: 0;
   /* 4 строки */
   height: calc(16px * 1.2 * 4);
   overflow: hidden;
@@ -102,15 +102,17 @@
 }
 
 .landing-services__btn {
-  display: inline-block;
-  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px;
   border-radius: 30px;
   border: 1px solid transparent;
   font-family: inherit;
   font-size: 12px;
+  min-height: 36px;
   text-transform: uppercase;
   white-space: nowrap;
-  line-height: 1.333;
   font-weight: 400;
   letter-spacing: 0.5px;
   text-decoration: none;
@@ -121,12 +123,24 @@
 .landing-services__btn--outline {
   background-color: transparent;
   border-color: currentColor;
-  color: rgb(119, 118, 121);
+  color: #777679;
+}
+
+.landing-services__btn--outline:hover {
+  background-color: transparent;
+  border-color: currentColor;
+  color: #353536;
 }
 
 .landing-services__btn--primary {
   background-color: #0000ec;
   border-color: #0000ec;
+  color: #ffffff;
+}
+
+.landing-services__btn--primary:hover {
+  background-color: #1414a5;
+  border-color: #1414a5;
   color: #ffffff;
 }
 
@@ -140,8 +154,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
-  padding: 0 10px;
+  gap: 2px;
+  padding: 0;
   text-align: center;
   position: relative;
 }
@@ -153,8 +167,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 0;
+  right: -1px;
   background: #e0dfe2;
+}
+
+.landing-services__feature:last-child::after {
+  display: none;
 }
 
 .landing-services__feature-top {
@@ -162,6 +180,7 @@
   color: rgb(109, 109, 111);
   line-height: 1;
   text-align: center;
+  letter-spacing: -0.05em;
 }
 
 .landing-services__feature-image {
@@ -182,6 +201,7 @@
   color: rgb(109, 109, 111);
   line-height: 1;
   text-align: center;
+  letter-spacing: -0.05em;
 }
 
 @media (--max-md) {

@@ -145,6 +145,9 @@ function register_carbon_fields_blocks()
     ])
     ->add_tab('Одобрим сделку', [
       Field::make('text', 'approval_title', 'Заголовок секции'),
+      Field::make('image', 'approval_bg_image', 'Фоновое изображение')->set_help_text(
+        'Подложка под градиент панели.'
+      ),
       Field::make('complex', 'approval_features', 'Список с галочками')->add_fields([
         Field::make('textarea', 'text', 'Текст')->set_rows(2),
       ]),
