@@ -23,8 +23,6 @@ import { initMobileMenu } from './src/scripts/mobile-menu'
 import { initCallbackButton } from './src/scripts/callback-button'
 import { initFeedbackForm } from './src/scripts/feedback-form'
 import { initSlideshow } from './src/scripts/slideshow'
-import { initClock } from './src/scripts/clock'
-
 new MaskInput('[data-maska]')
 
 initStickyHeader()
@@ -32,4 +30,3 @@ initMobileMenu()
 initCallbackButton()
 initFeedbackForm()
 initSlideshow()
-initClock()
