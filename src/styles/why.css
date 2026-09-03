@@ -144,26 +144,12 @@
   }
   .why__grid {
     grid-template-columns: 1fr;
-    gap: 20px 32px;
   }
   .why__card {
-    gap: 24px;
     padding: 44px 32px;
   }
-  .why__icon-box {
-    width: 88px;
-    height: 88px;
-  }
-  .why__icon-box img {
-    width: 44px;
-    height: 44px;
-  }
   .why__card-title {
-    font-size: 17px;
     min-height: 0;
-  }
-  .why__card-desc {
-    font-size: 15px;
   }
 }
 
@@ -202,7 +188,6 @@
   }
   .why__card-title {
     font-size: 16px;
-    min-height: 0;
   }
   .why__card-desc {
     font-size: 14px;

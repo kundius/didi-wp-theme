@@ -304,9 +304,6 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .approval__feature {
-    font-size: 22px;
-  }
   .approval__bullets {
     font-size: 16px;
     padding-left: 48px;
@@ -409,6 +406,5 @@
   .approval__consent {
     margin-left: 8px;
     margin-right: 8px;
-    font-size: 13px;
   }
 }
