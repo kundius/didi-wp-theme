@@ -204,47 +204,172 @@
   letter-spacing: -0.05em;
 }
 
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
+@media (--max-xl) {
+  .landing-services {
+    padding: 64px 0;
+  }
+  .landing-services__title {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  .landing-services__grid {
+    gap: 32px;
+  }
+  .landing-services__card {
+    padding: 56px 32px;
+  }
+  .landing-services__card-top {
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+  .landing-services__image {
+    width: 140px;
+    height: 140px;
+  }
+  .landing-services__desc {
+    height: calc(16px * 1.2 * 3);
+  }
+  .landing-services__buttons {
+    flex-wrap: nowrap;
+  }
+  .landing-services__btn {
+    font-size: 11px;
+  }
+  .landing-services__features {
+    flex-wrap: nowrap;
+  }
+}
+
+/* --max-lg: width < 1024px (контейнер 768px, переход в 1 колонку;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .landing-services {
+    padding: 56px 0;
+  }
+  .landing-services__title {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+  .landing-services__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .landing-services__card {
+    width: 100%;
+    padding: 48px 28px;
+  }
+  .landing-services__card-top {
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .landing-services__card-title,
+  .landing-services__desc {
+    height: auto;
+  }
+  .landing-services__buttons {
+    flex-wrap: nowrap;
+  }
+  .landing-services__btn {
+    font-size: 11px;
+  }
+  .landing-services__features {
+    flex-wrap: nowrap;
+  }
+}
+
+/* --max-md: width < 768px (картинка/контент в колонку, ширина картинки ограничена) */
 @media (--max-md) {
+  .landing-services {
+    padding: 48px 0;
+  }
+  .landing-services__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  .landing-services__grid {
+    gap: 24px;
+  }
+  .landing-services__card {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .landing-services__buttons {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .landing-services__btn {
+    font-size: 11px;
+  }
+  .landing-services__features {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  .landing-services__feature-top,
+  .landing-services__feature-bottom {
+    font-size: 11px;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px;
+   картинка/контент в колонку, ширина картинки ограничена) */
+@media (--max-sm) {
   .landing-services {
     padding: 40px 0;
   }
-
   .landing-services__title {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin-bottom: 28px;
   }
-
   .landing-services__grid {
     gap: 20px;
   }
-
   .landing-services__card {
-    width: 100%;
-    padding: 20px;
+    padding: 24px 16px;
   }
-
   .landing-services__card-top {
     flex-direction: column;
+    gap: 0;
+    margin-bottom: 28px;
   }
-
   .landing-services__image {
-    width: 100%;
+    width: 220px;
     height: auto;
-    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    align-self: center;
   }
-
+  .landing-services__info {
+    justify-content: flex-start;
+    gap: 0;
+    margin-top: 20px;
+    align-self: center;
+  }
+  .landing-services__card-title {
+    font-size: 16px;
+    text-align: center;
+    max-width: none;
+  }
+  .landing-services__desc {
+    font-size: 14px;
+    text-align: center;
+    max-width: none;
+  }
+  .landing-services__buttons {
+    flex-wrap: nowrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .landing-services__btn {
+    font-size: 10px;
+  }
   .landing-services__features {
+    flex-wrap: nowrap;
     gap: 10px;
   }
-
-  .landing-services__feature {
-    border-right: none !important;
-    padding: 0;
-  }
-
   .landing-services__feature-top,
   .landing-services__feature-bottom {
     font-size: 10px;
-    line-height: 1.2;
   }
 }

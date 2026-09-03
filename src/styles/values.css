@@ -1,5 +1,5 @@
 .values {
-  padding: 50px 0;
+  padding: 50px 0 75px;
   z-index: 20;
   position: relative;
   background: linear-gradient(105deg, #800000 0%, #a5001e 30%, #5b0021 55%, #2a1055 100%);
@@ -35,10 +35,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 12px;
-}
-
-values__grid-cell {
-
 }
 
 .values__grid-cell:nth-child(even) {
@@ -80,38 +76,146 @@ values__grid-cell {
   font-weight: 300;
 }
 
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
 @media (--max-xl) {
-  .values {
-    padding: 24px 24px 0;
+  .values__title {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 40px;
   }
-
   .values__grid {
-    flex-wrap: wrap;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-
-  .values__card:nth-child(even) {
+  .values__grid-cell {
+    display: flex;
+  }
+  .values__grid-cell:nth-child(even) {
     margin-top: 0;
+  }
+  .values__card {
+    padding: 52px 26px 30px 18px;
+    border-radius: 28px;
+  }
+  .values__badge {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 48px;
+    font-size: 22px;
+  }
+  .values__card-title {
+    font-size: 17px;
+  }
+  .values__card-desc {
+    font-size: 15px;
   }
 }
 
+/* --max-lg: width < 1024px (контейнер 768px, 2 колонки;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .values {
+    padding: 24px 0 56px;
+  }
+  .values__title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+  .values__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .values__grid-cell {
+    display: flex;
+  }
+  .values__grid-cell:nth-child(even) {
+    margin-top: 0;
+  }
+  .values__card {
+    padding: 44px 24px 28px 18px;
+    border-radius: 26px;
+  }
+  .values__badge {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 40px;
+    font-size: 21px;
+  }
+  .values__card-title {
+    font-size: 16px;
+  }
+  .values__card-desc {
+    font-size: 14px;
+  }
+}
+
+/* --max-md: width < 768px */
 @media (--max-md) {
   .values {
-    padding: 16px 12px 0;
+    padding: 24px 0 48px;
   }
-
-  .values__panel {
-    padding: 48px 20px;
-    border-radius: 20px;
-  }
-
   .values__title {
-    margin-bottom: 40px;
+    text-align: center;
     font-size: 32px;
+    margin-bottom: 28px;
   }
-
+  .values__grid {
+    gap: 16px;
+  }
+  .values__grid-cell {
+    display: flex;
+  }
   .values__card {
-    width: 100%;
-    max-width: 400px;
+    padding: 36px 20px;
+    border-radius: 24px;
+  }
+  .values__badge {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    font-size: 20px;
+  }
+  .values__card-title {
+    font-size: 16px;
+  }
+}
+
+/* --max-sm: width < 640px (1 колонка, контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .values {
+    padding: 24px 0 40px;
+  }
+  .values__title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .values__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .values__grid-cell {
+    display: flex;
+  }
+  .values__card {
+    padding: 28px 18px;
+    border-radius: 22px;
+  }
+  .values__badge {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 26px;
+    border-radius: 14px;
+    font-size: 18px;
+  }
+  .values__card-title {
+    font-size: 15px;
+  }
+  .values__card-desc {
+    font-size: 14px;
   }
 }

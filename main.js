@@ -1,5 +1,6 @@
 import 'normalize.css'
 import './src/styles/main.css'
+import './src/styles/btn.css'
 import './src/styles/icons.css'
 import './src/styles/modal.css'
 import './src/styles/header.css'

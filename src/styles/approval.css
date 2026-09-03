@@ -160,33 +160,6 @@
   color: #ff9c9c;
 }
 
-.approval__submit {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 72px;
-  padding: 16px 32px;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: 0.01em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #940000;
-  border: none;
-  border-radius: 36px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.approval__submit:hover {
-  background-color: #dd0000;
-  box-shadow: 0 0 16px #fff;
-}
-
 .approval__consent {
   position: relative;
   display: flex;
@@ -270,4 +243,172 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50px;
   cursor: pointer;
+}
+
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
+@media (--max-xl) {
+  .approval {
+    padding: 60px 0 120px;
+  }
+  .approval__title {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 72px;
+  }
+  .approval__right {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .approval__feature {
+    font-size: 22px;
+  }
+  .approval__check {
+    width: 46px;
+    height: 46px;
+  }
+  .approval__bullets {
+    font-size: 17px;
+    padding-left: 56px;
+  }
+  .approval__form {
+    padding: 48px 32px 40px;
+    border-radius: 28px;
+  }
+  .approval__form-title {
+    font-size: 22px;
+    margin-bottom: 36px;
+  }
+  .approval__consent {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+/* --max-lg: width < 1024px (контейнер 768px, переход в 1 колонку;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .approval {
+    padding: 50px 0 100px;
+  }
+  .approval__title {
+    font-size: 40px;
+    margin-bottom: 56px;
+  }
+  .approval__wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .approval__right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .approval__feature {
+    font-size: 22px;
+  }
+  .approval__bullets {
+    font-size: 16px;
+    padding-left: 48px;
+  }
+  .approval__form {
+    padding: 44px 40px 36px;
+    border-radius: 26px;
+  }
+  .approval__form-title {
+    font-size: 21px;
+  }
+  .approval__input {
+    font-size: 16px;
+    min-height: 48px;
+  }
+  .approval__consent {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* --max-md: width < 768px */
+@media (--max-md) {
+  .approval {
+    padding: 40px 0 80px;
+  }
+  .approval__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .approval__wrapper {
+    gap: 24px;
+  }
+  .approval__feature {
+    font-size: 20px;
+  }
+  .approval__check {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+  }
+  .approval__bullets {
+    font-size: 15px;
+    padding-left: 40px;
+  }
+  .approval__form {
+    padding: 40px 28px 32px;
+    border-radius: 24px;
+  }
+  .approval__form-title {
+    font-size: 20px;
+    margin-bottom: 28px;
+  }
+  .approval__input {
+    min-height: 46px;
+  }
+  .approval__consent {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 13px;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .approval {
+    padding: 32px 0 60px;
+  }
+  .approval__title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .approval__wrapper {
+    gap: 20px;
+  }
+  .approval__feature {
+    font-size: 18px;
+  }
+  .approval__check {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+  }
+  .approval__bullets {
+    font-size: 14px;
+    padding-left: 32px;
+  }
+  .approval__form {
+    padding: 32px 20px 28px;
+    border-radius: 22px;
+  }
+  .approval__form-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .approval__input {
+    font-size: 15px;
+    min-height: 44px;
+  }
+  .approval__consent {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 13px;
+  }
 }

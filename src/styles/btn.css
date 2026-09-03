@@ -1,0 +1,37 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 72px;
+  padding: 16px 32px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #940000;
+  border: none;
+  border-radius: 36px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #dd0000;
+  box-shadow: 0 0 16px #fff;
+}
+
+.btn--full {
+  display: flex;
+  width: 100%;
+}
+
+/* --max-md: убрать фиксированную минимальную ширину, чтобы кнопка не вылезала */
+@media (--max-md) {
+  .btn {
+    min-width: 0;
+  }
+}

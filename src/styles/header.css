@@ -32,6 +32,7 @@
   justify-content: space-between;
   padding-top: 8px;
   padding-bottom: 8px;
+  height: var(--header-height);
 }
 
 .header-logo {
@@ -62,7 +63,7 @@
 .header-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 0 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -186,7 +187,7 @@
   display: none;
 }
 
-@media (--max-2xl) {
+@media (--max-xl) {
   .header-toggle {
     display: flex;
     align-items: center;
@@ -223,16 +224,33 @@
   }
 }
 
-@media (--max-md) {
+/* --max-sm: телефон и кнопки в 2 ряда, оба ряда в пределах высоты шапки (64px) */
+@media (--max-sm) {
   .header-layout {
     gap: 12px;
   }
-
-  .header-logo__name {
-    font-size: 18px;
+  .header-nav > li > a {
+    white-space: normal;
   }
-
-  .header-logo__tagline {
-    font-size: 10px;
+  .header-contacts {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 2px 12px;
+  }
+  .header-phone {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .header-request {
+    font-size: 11px;
+    line-height: 1.2;
+    padding: 4px 10px;
+  }
+  .header-max {
+    width: 28px;
+    height: 28px;
   }
 }

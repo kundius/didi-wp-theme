@@ -135,28 +135,161 @@
   text-decoration: none;
 }
 
-.faq__cta {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 72px;
-  padding: 16px 32px;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: 0.01em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #940000;
-  border: none;
-  border-radius: 36px;
-  cursor: pointer;
-  transition: all 0.2s;
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
+@media (--max-xl) {
+  .faq {
+    padding: 100px 0;
+  }
+  .faq__title {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 72px;
+    padding-left: 48px;
+  }
+  .faq__columns {
+    gap: 44px;
+  }
+  .faq__content {
+    padding-left: 48px;
+  }
+  * + .faq__item {
+    margin-top: 40px;
+  }
+  .faq__question {
+    font-size: 24px;
+  }
+  .faq__answer {
+    padding: 16px 0 16px 40px;
+  }
+  .faq__image-card {
+    border-radius: 28px;
+  }
+  .faq__overlay {
+    padding: 28px 32px 14px;
+    border-radius: 28px;
+  }
+  .faq__overlay-phone,
+  .faq__overlay-email {
+    font-size: 22px;
+  }
 }
 
-.faq__cta:hover {
-  background-color: #dd0000;
-  box-shadow: 0 0 16px #fff;
+/* --max-lg: width < 1024px (контейнер 768px, переход в 1 колонку;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .faq {
+    padding: 80px 0;
+  }
+  .faq__title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 56px;
+    padding-left: 0;
+  }
+  .faq__columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .faq__content {
+    padding-left: 0;
+  }
+  * + .faq__item {
+    margin-top: 36px;
+  }
+  .faq__question {
+    font-size: 22px;
+  }
+  .faq__answer {
+    font-size: 17px;
+    padding: 16px 0 16px 32px;
+  }
+  .faq__image-card {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 26px;
+  }
+  .faq__overlay {
+    padding: 24px 28px 14px;
+    border-radius: 26px;
+  }
+  .faq__overlay-phone,
+  .faq__overlay-email {
+    font-size: 20px;
+  }
 }
+
+/* --max-md: width < 768px */
+@media (--max-md) {
+  .faq {
+    padding: 64px 0;
+  }
+  .faq__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .faq__columns {
+    gap: 32px;
+  }
+  * + .faq__item {
+    margin-top: 28px;
+  }
+  .faq__question {
+    font-size: 20px;
+  }
+  .faq__answer {
+    font-size: 16px;
+    padding: 12px 0 12px 28px;
+  }
+  .faq__image-card {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 24px;
+  }
+  .faq__overlay {
+    padding: 20px 24px 12px;
+    border-radius: 24px;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .faq {
+    padding: 48px 0;
+  }
+  .faq__title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .faq__columns {
+    gap: 24px;
+  }
+  * + .faq__item {
+    margin-top: 24px;
+  }
+  .faq__question {
+    font-size: 18px;
+  }
+  .faq__answer {
+    font-size: 15px;
+    padding: 12px 0 12px 24px;
+  }
+  .faq__image-card {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 22px;
+  }
+  .faq__overlay {
+    padding: 18px 20px 12px;
+    border-radius: 22px;
+  }
+  .faq__overlay-phone,
+  .faq__overlay-email {
+    font-size: 18px;
+  }
+  .faq__overlay .btn {
+    width: 100%;
+  }
+}
+

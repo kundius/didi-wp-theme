@@ -64,7 +64,7 @@ Template Name: Лендинг
           <?php endif; ?>
 
           <?php $btn_text = carbon_get_post_meta(get_the_ID(), 'intro_btn_text'); ?>
-          <button type="button" class="intro__cta" data-callback-button data-callback-button-goal="CALLBACK_INTRO">
+          <button type="button" class="btn intro__cta" data-callback-button data-callback-button-goal="CALLBACK_INTRO">
             <?php echo $btn_text ?: 'Бесплатная консультация'; ?>
           </button>
         </div>
@@ -266,7 +266,7 @@ Template Name: Лендинг
         <?php $process_btn_text = carbon_get_the_post_meta('process_btn_text'); ?>
         <?php if (!empty($process_btn_text)): ?>
         <div class="process__cta-wrap">
-          <button type="button" class="process__cta"
+          <button type="button" class="btn"
             data-callback-button
             data-callback-button-goal="CALLBACK_PROCESS">
             <?php echo esc_html($process_btn_text); ?>
@@ -352,7 +352,7 @@ Template Name: Лендинг
                 <?php endif; ?>
 
                 <?php $faq_btn_text = carbon_get_the_post_meta('faq_btn_text'); ?>
-                <button type="button" class="faq__cta"
+                <button type="button" class="btn"
                   data-callback-button
                   data-callback-button-goal="CALLBACK_FAQ">
                   <?php echo esc_html($faq_btn_text ?: 'Задать свой вопрос'); ?>
@@ -440,7 +440,7 @@ Template Name: Лендинг
               <div class="approval__errors" data-feedback-form-errors></div>
 
               <?php $approval_btn_text = carbon_get_the_post_meta('approval_btn_text'); ?>
-              <button type="submit" class="approval__submit">
+              <button type="submit" class="btn btn--full">
                 <?php echo esc_html($approval_btn_text ?: 'Оставить заявку'); ?>
               </button>
 

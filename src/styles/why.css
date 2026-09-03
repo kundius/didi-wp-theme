@@ -93,36 +93,155 @@
   font-weight: 300;
 }
 
-@media (--max-lg) {
-  .why {
-    padding: 24px 24px 0;
-  }
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
 
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
+@media (--max-xl) {
+  .why__title {
+    font-size: 44px;
+    margin-bottom: 22px;
+  }
+  .why__subtitle {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
   .why__grid {
-    grid-template-columns: 1fr;
+    gap: 20px 32px;
+  }
+  .why__card {
+    gap: 24px;
+    padding: 48px 32px;
+  }
+  .why__icon-box {
+    width: 88px;
+    height: 88px;
+  }
+  .why__icon-box img {
+    width: 44px;
+    height: 44px;
+  }
+  .why__card-title {
+    font-size: 17px;
+  }
+  .why__card-desc {
+    font-size: 15px;
   }
 }
 
+/* --max-lg: width < 1024px (контейнер 768px, переход в 1 колонку;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .why {
+    padding: 24px 0 56px;
+  }
+  .why__title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .why__subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .why__grid {
+    grid-template-columns: 1fr;
+    gap: 20px 32px;
+  }
+  .why__card {
+    gap: 24px;
+    padding: 44px 32px;
+  }
+  .why__icon-box {
+    width: 88px;
+    height: 88px;
+  }
+  .why__icon-box img {
+    width: 44px;
+    height: 44px;
+  }
+  .why__card-title {
+    font-size: 17px;
+    min-height: 0;
+  }
+  .why__card-desc {
+    font-size: 15px;
+  }
+}
+
+/* --max-md: width < 768px (карточка в колонку, иконка сверху по центру) */
 @media (--max-md) {
   .why {
-    padding: 16px 12px 0;
+    padding: 24px 0 48px;
   }
-
   .why__title {
     font-size: 32px;
+    margin-bottom: 24px;
   }
-
   .why__subtitle {
+    font-size: 15px;
     margin-bottom: 40px;
   }
-
+  .why__grid {
+    gap: 16px;
+  }
   .why__card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0;
+    padding: 36px 24px;
   }
-
   .why__icon-box {
-    margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    margin-bottom: 14px;
+  }
+  .why__icon-box img {
+    width: 40px;
+    height: 40px;
+  }
+  .why__card-title {
+    font-size: 16px;
+    min-height: 0;
+  }
+  .why__card-desc {
+    font-size: 14px;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .why {
+    padding: 24px 0 40px;
+  }
+  .why__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .why__subtitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .why__grid {
+    gap: 12px;
+  }
+  .why__card {
+    padding: 28px 16px;
+  }
+  .why__icon-box {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .why__icon-box img {
+    width: 36px;
+    height: 36px;
+  }
+  .why__card-title {
+    font-size: 15px;
+  }
+  .why__card-desc {
+    font-size: 14px;
   }
 }

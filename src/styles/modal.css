@@ -43,30 +43,6 @@
   justify-content: center;
 }
 
-.modal-form__submit-button {
-  background-color: #3bb24e;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 12px;
-  padding: 0 24px;
-  height: 54px;
-  width: 100%;
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    transform 0.1s;
-}
-
-.modal-form__submit-button:hover {
-  background-color: #32a044;
-}
-
-.modal-form__submit-button:active {
-  transform: scale(0.98);
-}
-
 .modal-form-success {
   display: none;
   z-index: 2;

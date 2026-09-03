@@ -93,7 +93,7 @@
           <div class="modal-form__errors" data-feedback-form-errors></div>
 
           <div class="modal-form__submit">
-            <button type="submit" class="modal-form__submit-button">
+            <button type="submit" class="btn btn--full">
               Жду звонка
             </button>
           </div>

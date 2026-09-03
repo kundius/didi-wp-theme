@@ -46,10 +46,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
   gap: 20px;
-  padding: 12px 0;
+  padding: 12px var(--container-padding);
 
   @media (--min-2xl) {
     margin-left: 2vw;
@@ -110,4 +108,107 @@
 
 .bottom-footer__nav a:hover {
   color: #ffffff;
+}
+
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px) */
+@media (--max-xl) {
+  .footer {
+    padding: 64px 0;
+  }
+  .footer__title {
+    font-size: 44px;
+    margin-bottom: 64px;
+  }
+  .footer__contacts {
+    font-size: 22px;
+  }
+  .footer__address {
+    font-size: 17px;
+  }
+  .bottom-footer__links,
+  .bottom-footer__nav {
+    gap: 28px;
+  }
+}
+
+/* --max-lg: width < 1024px (контейнер 768px; идёт раньше --max-md,
+   поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .footer {
+    padding: 56px 0;
+  }
+  .footer__title {
+    font-size: 40px;
+    margin-bottom: 56px;
+  }
+  .footer__contacts {
+    font-size: 21px;
+  }
+  .footer__address {
+    font-size: 16px;
+  }
+  .bottom-footer__links,
+  .bottom-footer__nav {
+    gap: 24px;
+  }
+}
+
+/* --max-md: width < 768px */
+@media (--max-md) {
+  .footer {
+    padding: 48px 0;
+  }
+  .footer__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .footer__contacts {
+    font-size: 20px;
+    margin-bottom: 36px;
+  }
+  .footer__address {
+    font-size: 15px;
+  }
+  .bottom-footer__container {
+    justify-content: center;
+  }
+  .bottom-footer__links,
+  .bottom-footer__nav {
+    gap: 20px;
+  }
+  .bottom-footer__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .footer {
+    padding: 40px 0;
+  }
+  .footer__title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .footer__contacts {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+  .footer__address {
+    font-size: 14px;
+  }
+  .bottom-footer__container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bottom-footer__links {
+    justify-content: center;
+    gap: 16px;
+  }
+  .bottom-footer__nav {
+    gap: 16px;
+  }
 }

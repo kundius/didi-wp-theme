@@ -96,57 +96,125 @@
 }
 
 .intro__cta {
-  font-size: 18px;
-  letter-spacing: 0px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: #fdfdfd;
-  padding: 24px 32px;
-  background: #a10000;
-  border-radius: 36px;
-  border: none;
-  font-weight: 300;
   margin-left: calc(48px + 20px);
-  transition: box-shadow 0.2s ease;
 }
 
-.intro__cta:hover {
-  box-shadow: 0 0 32px #fff;
-}
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
 
-@media (--max-md) {
-  .intro__content {
-    padding-top: 40px;
-    padding-bottom: 40px;
+/* --max-2xl: 1280px <= width < 1536px */
+@media (--max-2xl) {
+  .intro__title {
+    font-size: 64px;
   }
+  .intro__feature {
+    font-size: 28px;
+  }
+  .intro__features {
+    gap: 28px;
+  }
+}
 
+/* --max-xl: 1024px <= width < 1280px */
+@media (--max-xl) {
+  .intro__eyebrow {
+    font-size: 16px;
+  }
+  .intro__title {
+    font-size: 56px;
+    margin-bottom: 36px;
+  }
+  .intro__feature {
+    font-size: 26px;
+  }
+  .intro__bullet {
+    width: 44px;
+    height: 44px;
+  }
+  .intro__features {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+/* --max-lg: width < 1024px (перекрывается с --max-md, но идёт раньше,
+   поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .intro__title {
+    font-size: 48px;
+  }
+  .intro__feature {
+    font-size: 24px;
+  }
+  .intro__bullet {
+    width: 42px;
+    height: 42px;
+  }
+  .intro__features {
+    gap: 22px;
+    margin-bottom: 36px;
+  }
+}
+
+/* --max-md: width < 768px */
+@media (--max-md) {
+  .intro {
+    padding: 48px 0 calc(72px + 120px);
+    margin-bottom: -120px;
+  }
   .intro__eyebrow {
     font-size: 14px;
   }
-
   .intro__title {
-    font-size: 48px;
+    font-size: 40px;
     margin-bottom: 32px;
   }
-
-  .intro__features {
-    gap: 20px;
-    margin-bottom: 36px;
-  }
-
   .intro__feature {
-    font-size: 18px;
-    align-items: flex-start;
+    font-size: 20px;
   }
-
   .intro__bullet {
     width: 40px;
     height: 40px;
   }
-
+  .intro__features {
+    gap: 20px;
+    margin-bottom: 32px;
+  }
   .intro__cta {
+    margin-left: 0;
     width: 100%;
-    padding: 18px 24px;
-    font-size: 16px;
+  }
+}
+
+/* --max-sm: width < 640px */
+@media (--max-sm) {
+  .intro {
+    padding: 40px 0 calc(60px + 100px);
+    margin-bottom: -100px;
+  }
+  .intro__eyebrow {
+    font-size: 13px;
+  }
+  .intro__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .intro__feature {
+    font-size: 18px;
+    gap: 16px;
+  }
+  .intro__bullet {
+    width: 36px;
+    height: 36px;
+  }
+  .intro__bullet svg {
+    width: 16px;
+    height: 16px;
+  }
+  .intro__features {
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .intro__cta {
+    min-width: 0;
   }
 }
