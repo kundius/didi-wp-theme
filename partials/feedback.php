@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="feedback-form__row">
-        <div class="feedback-form__group feedback-form__group--full">
+        <div class="feedback-form__group">
           <textarea name="message" placeholder="Введите текст сообщения"></textarea>
         </div>
       </div>

@@ -1,14 +1,18 @@
 .contacts-cards {
-    @media (--min-2xl) {
-      margin-left: 2vw;
-      margin-right: 2vw;
-    }
+  @media (--min-2xl) {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  @media (--max-2xl) {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
 }
 
 .contacts-cards__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 40px;
   align-items: stretch;
 
   @media (--max-lg) {
@@ -22,8 +26,8 @@
 
 .contacts-card {
   background-color: #ffffff;
-  border-radius: 20px;
-  padding: 35px 30px;
+  border-radius: 30px;
+  padding: 36px 30px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -39,45 +43,29 @@
   height: 96px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  margin-bottom: 4px;
 }
 
 .contacts-card__title {
-  margin: 0 0 20px;
+  margin: 0 0 28px;
   color: #061151;
   font-size: 28px;
   font-weight: 400;
 }
 
 .contacts-card__bold {
-  margin: 0 0 15px;
+  margin: 0 0 28px;
   font-size: 20px;
   font-weight: 700;
   color: #000000;
 }
 
 .contacts-card__light {
-  margin: 0;
+  margin: 0 0 28px;
   font-size: 18px;
   font-weight: 400;
   color: #000000;
-}
-
-.contacts-card__row {
-  margin: 0 0 15px;
-  color: #333333;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.contacts-card__row-day {
-  font-weight: 700;
-  font-size: 14px;
-  color: #000000;
-  margin-right: 4px;
 }
 
 .feedback {
@@ -94,63 +82,43 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   justify-content: space-between;
-  padding: 40px;
+  padding: 36px 36px 12px;
   color: #ffffff;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
-  background: linear-gradient(
-    110deg,
-    #000066 0%,
-    #000066 30%,
-    #111111 32%,
-    #111111 38%,
-    #9e0b0f 40%,
-    #cc0000 100%
-  );
-
-  @media (--max-lg) {
-    background: linear-gradient(
-      135deg,
-      #000066 0%,
-      #000066 40%,
-      #111111 42%,
-      #111111 48%,
-      #9e0b0f 50%,
-      #cc0000 100%
-    );
-  }
+  background: url('../images/feedback-bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
 
   @media (--max-md) {
-    padding: 30px 20px;
-    background: linear-gradient(180deg, #000066 0%, #111111 50%, #9e0b0f 100%);
+    padding: 24px;
   }
 }
 
 .feedback-form__info {
-  flex: 1 1 250px;
+  flex: 2 1 250px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .feedback-form__title {
   margin: 0;
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  color: #fff;
 
   @media (--max-md) {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
 .feedback-form__desc {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #e0e0e0;
+  font-size: 16px;
+  color: #fff;
 }
 
 .feedback-form__fields {
@@ -171,11 +139,7 @@
 }
 
 .feedback-form__group {
-  flex: 1 1 150px;
-}
-
-.feedback-form__group--full {
-  flex: 1 1 100%;
+  flex: 1;
 }
 
 .feedback-form input[type='text'],
@@ -183,11 +147,12 @@
 .feedback-form input[type='tel'],
 .feedback-form textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 4px 16px;
   border: none;
   border-radius: 4px;
+  min-height: 54px;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 16px;
   color: #333333;
   outline: none;
 }
@@ -199,13 +164,11 @@
 
 .feedback-form textarea {
   resize: vertical;
-  min-height: 48px;
 }
 
 .feedback-form__note {
-  margin-top: 5px;
-  font-size: 10px;
-  color: #e0e0e0;
+  font-size: 12px;
+  color: #fff;
 }
 
 .feedback-form__errors {
@@ -227,11 +190,14 @@
 
 .feedback-form__submit {
   width: 100%;
-  max-width: 250px;
-  padding: 14px 40px;
+  padding: 4px 40px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
@@ -254,11 +220,10 @@
 
 .feedback-form__privacy {
   margin: 0;
-  font-size: 9px;
-  line-height: 1.4;
-  color: #e0e0e0;
+  font-size: 12px;
+  color: #fff;
   font-style: italic;
-  text-align: left;
+  text-align: center;
 
   a {
     color: #ffffff;
@@ -315,11 +280,15 @@
     margin-left: 2vw;
     margin-right: 2vw;
   }
+  @media (--max-2xl) {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
 }
 
 .contacts-map__inner {
   height: 400px;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
   background-color: #d3d3d3;
 

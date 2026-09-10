@@ -220,6 +220,10 @@ a {
   flex-direction: column;
   min-height: 100vh;
   background: url('../images/page-bg.jpg') no-repeat 50% 0;
+
+  @media (min-width: 1920px) {
+    background-size: 100% auto;
+  }
 }
 
 .page-layout__body {

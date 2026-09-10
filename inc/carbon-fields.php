@@ -53,14 +53,7 @@ function register_carbon_fields_blocks()
     Field::make('text', 'crb_theme_email', 'E-mail'),
     Field::make('text', 'crb_theme_email_caption', 'E-mail / Подпись'),
     Field::make('textarea', 'crb_theme_address', 'Адерс')->set_rows(2),
-    Field::make(
-      'complex',
-      'crb_theme_working_hours',
-      'Контакты / Время работы',
-    )->add_fields([
-      Field::make('text', 'day', 'Дни'),
-      Field::make('text', 'hours', 'Часы'),
-    ]),
+    Field::make('textarea', 'crb_theme_working_hours', 'Контакты / Время работы')->set_rows(4),
     Field::make('textarea', 'crb_theme_counters', 'Счетчики')->set_rows(2),
     Field::make('textarea', 'crb_theme_copyright', 'Копирайт')->set_rows(2),
     Field::make('textarea', 'crb_theme_map_html', 'Карта / HTML код')->set_rows(4),

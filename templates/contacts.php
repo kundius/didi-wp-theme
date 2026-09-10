@@ -47,7 +47,7 @@ Template Name: Контакты
           $contacts_phone ||
           $contacts_email ||
           $contacts_address ||
-          !empty($contacts_schedules)
+          !empty(trim($contacts_schedules))
         ): ?>
         <section class="contacts-cards">
             <div class="contacts-cards__grid">
@@ -91,34 +91,18 @@ Template Name: Контакты
                   alt="" width="58" height="71"></div>
                 <h3 class="contacts-card__title">Наш адрес</h3>
                 <div class="contacts-card__light">
-                  <?php foreach (
-                    preg_split('/\r\n|\r|\n/', $contacts_address)
-                    as $contacts_address_line
-                  ): ?>
-                    <p><?php echo esc_html(
-                      $contacts_address_line,
-                    ); ?></p>
-                  <?php endforeach; ?>
+                  <?php echo nl2br(wp_kses_post($contacts_address)); ?>
                 </div>
               </div>
               <?php endif; ?>
 
-              <?php if (!empty($contacts_schedules)): ?>
+              <?php if (!empty(trim($contacts_schedules))): ?>
               <div class="contacts-card">
                 <div class="contacts-card__icon"><img src="<?php echo esc_url(get_theme_file_uri('assets/contacts-4.png')); ?>"
                   alt="" width="60" height="60"></div>
                 <h3 class="contacts-card__title">Время работы</h3>
                 <div class="contacts-card__light">
-                  <?php foreach ($contacts_schedules as $contacts_schedule): ?>
-                    <p class="contacts-card__row">
-                      <?php if (!empty($contacts_schedule['day'])): ?>
-                        <span class="contacts-card__row-day"><?php echo esc_html(
-                          $contacts_schedule['day'],
-                        ); ?></span>
-                      <?php endif; ?>
-                      <span><?php echo esc_html($contacts_schedule['hours'] ?? ''); ?></span>
-                    </p>
-                  <?php endforeach; ?>
+                  <?php echo nl2br(wp_kses_post($contacts_schedules)); ?>
                 </div>
               </div>
               <?php endif; ?>
