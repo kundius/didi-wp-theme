@@ -476,8 +476,6 @@ Template Name: Лендинг
     </div>
     <?php endif; ?>
 
-    <div class="page-layout__spacer"></div>
-
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>

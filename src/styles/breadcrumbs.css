@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0;
   list-style: none;
-  padding: 16px 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -15,22 +15,21 @@
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
-  content: '/';
-  color: #9ca3af;
-  margin: 0 8px;
+  content: '|';
+  color: #a1a1a1;
+  margin: 0 12px;
 }
 
 .breadcrumbs__link {
-  color: #6b7280;
+  color: #a1a1a1;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .breadcrumbs__link:hover {
-  color: #3bb24e;
+  color: #242424;
 }
 
 .breadcrumbs__text {
-  color: #3bb24e;
-  font-weight: 500;
+  color: #242424;
 }

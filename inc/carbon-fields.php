@@ -45,27 +45,25 @@ function register_carbon_fields_blocks()
     ]);
 
   Container::make('theme_options', 'Параметры')->add_tab('Общее', [
-    Field::make('image', 'crb_theme_site_logo', 'Логотип'),
     Field::make('textarea', 'crb_theme_site_name', 'Название сайта')->set_rows(2),
     Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
     Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
     Field::make('text', 'crb_theme_phone_caption', 'Телефон / Подпись'),
     Field::make('text', 'crb_theme_max_link', 'MAX'),
     Field::make('text', 'crb_theme_email', 'E-mail'),
+    Field::make('text', 'crb_theme_email_caption', 'E-mail / Подпись'),
     Field::make('textarea', 'crb_theme_address', 'Адерс')->set_rows(2),
     Field::make(
       'complex',
-      'crb_theme_contacts_schedules',
-      'Контакты / Доп. расписания',
-    )->add_fields([Field::make('text', 'text', 'Текст')]),
-    Field::make('text', 'crb_theme_contacts_card_title', 'Контакты / Карточка / Заголовок'),
-    Field::make(
-      'textarea',
-      'crb_theme_contacts_card_text',
-      'Контакты / Карточка / Текст (районы)',
-    )->set_rows(4),
+      'crb_theme_working_hours',
+      'Контакты / Время работы',
+    )->add_fields([
+      Field::make('text', 'day', 'Дни'),
+      Field::make('text', 'hours', 'Часы'),
+    ]),
     Field::make('textarea', 'crb_theme_counters', 'Счетчики')->set_rows(2),
     Field::make('textarea', 'crb_theme_copyright', 'Копирайт')->set_rows(2),
+    Field::make('textarea', 'crb_theme_map_html', 'Карта / HTML код')->set_rows(4),
   ]);
 
   Container::make('post_meta', 'Лендинг')
