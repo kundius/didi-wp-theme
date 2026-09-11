@@ -67,6 +67,23 @@ function register_carbon_fields_blocks()
       Field::make('text', 'crb_consult_note', 'Примечание (например, срок оформления)'),
       Field::make('textarea', 'crb_consult_form_title', 'Заголовок формы')->set_rows(2),
       Field::make('text', 'crb_consult_btn_text', 'Текст кнопки'),
+    ])
+    ->add_tab('Преимущества', [
+      Field::make('textarea', 'crb_advantages_title', 'Заголовок секции')->set_rows(2),
+      Field::make('image', 'crb_advantages_bg_image', 'Фоновое изображение')->set_help_text(
+        'Фото на тёмном фоне секции. Без него остаётся только затемнение.'
+      ),
+      Field::make('complex', 'crb_advantages_cards', 'Карточки')->add_fields([
+        Field::make('select', 'icon', 'Иконка')
+          ->add_options([
+            'wallet' => 'Кошелёк',
+            'car' => 'Автомобиль',
+            'check' => 'Галочка',
+            'clock' => 'Часы',
+          ]),
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+      ]),
     ]);
 
   Container::make('post_meta', 'Лендинг')
