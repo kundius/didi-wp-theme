@@ -160,6 +160,8 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
     </div>
     <?php endif; ?>
 
+    <?php get_template_part('partials/feedback'); ?>
+
     <?php $crb_advantages_title = carbon_get_theme_option('crb_advantages_title'); ?>
     <?php $crb_advantages_bg_image = carbon_get_theme_option('crb_advantages_bg_image'); ?>
     <?php $crb_advantages_cards = carbon_get_theme_option('crb_advantages_cards'); ?>
@@ -207,8 +209,6 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
       </div>
     </section>
     <?php endif; ?>
-
-    <?php get_template_part('partials/feedback'); ?>
 
     <?php get_template_part('partials/footer'); ?>
   </div>
