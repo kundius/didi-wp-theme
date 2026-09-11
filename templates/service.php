@@ -150,18 +150,6 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
     </section>
     <?php endif; ?>
 
-    <?php if ($svc_extended_content): ?>
-    <div class="page-content">
-      <div class="container">
-        <div class="page-content__inner content">
-          <?php echo apply_filters('the_content', $svc_extended_content); ?>
-        </div>
-      </div>
-    </div>
-    <?php endif; ?>
-
-    <?php get_template_part('partials/feedback'); ?>
-
     <?php $crb_advantages_title = carbon_get_theme_option('crb_advantages_title'); ?>
     <?php $crb_advantages_bg_image = carbon_get_theme_option('crb_advantages_bg_image'); ?>
     <?php $crb_advantages_cards = carbon_get_theme_option('crb_advantages_cards'); ?>
@@ -209,6 +197,18 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
       </div>
     </section>
     <?php endif; ?>
+
+    <?php if ($svc_extended_content): ?>
+    <div class="page-content">
+      <div class="container">
+        <div class="page-content__inner content">
+          <?php echo apply_filters('the_content', $svc_extended_content); ?>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <?php get_template_part('partials/feedback'); ?>
 
     <?php get_template_part('partials/footer'); ?>
   </div>
