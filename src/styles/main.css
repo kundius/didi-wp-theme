@@ -260,6 +260,10 @@ a {
   }
 }
 
+.page-content--before {
+  background-color: rgba(183, 202, 213, 0.851);
+}
+
 .page-header + .page-content {
   margin-top: 0;
 }

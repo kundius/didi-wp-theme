@@ -2,6 +2,10 @@
 /*
 Template Name: Услуга
 */
+
+$svc_extended = get_extended(get_post_field('post_content', get_the_ID()));
+$svc_main_content = trim($svc_extended['main']);
+$svc_extended_content = trim($svc_extended['extended']);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
@@ -35,11 +39,21 @@ Template Name: Услуга
       <h1 class="page-title"><?php the_title(); ?></h1>
     </div>
 
-    <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
+    <?php if ($svc_main_content): ?>
+    <div class="page-content page-content--before">
+      <div class="container">
+        <div class="page-content__inner content">
+          <?php echo apply_filters('the_content', $svc_main_content); ?>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if ($svc_extended_content): ?>
     <div class="page-content">
       <div class="container">
         <div class="page-content__inner content">
-          <?php the_content(); ?>
+          <?php echo apply_filters('the_content', $svc_extended_content); ?>
         </div>
       </div>
     </div>
