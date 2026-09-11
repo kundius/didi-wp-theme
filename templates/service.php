@@ -61,11 +61,11 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
     </div>
     <?php endif; ?>
 
-    <?php $crb_consult_title = carbon_get_the_post_meta('crb_consult_title'); ?>
-    <?php $crb_consult_items = carbon_get_the_post_meta('crb_consult_items'); ?>
-    <?php $crb_consult_note = carbon_get_the_post_meta('crb_consult_note'); ?>
-    <?php $crb_consult_form_title = carbon_get_the_post_meta('crb_consult_form_title'); ?>
-    <?php $crb_consult_btn_text = carbon_get_the_post_meta('crb_consult_btn_text'); ?>
+    <?php $crb_consult_title = carbon_get_theme_option('crb_consult_title'); ?>
+    <?php $crb_consult_items = carbon_get_theme_option('crb_consult_items'); ?>
+    <?php $crb_consult_note = carbon_get_theme_option('crb_consult_note'); ?>
+    <?php $crb_consult_form_title = carbon_get_theme_option('crb_consult_form_title'); ?>
+    <?php $crb_consult_btn_text = carbon_get_theme_option('crb_consult_btn_text'); ?>
     <?php if ($crb_consult_title || !empty($crb_consult_items) || $crb_consult_note || $crb_consult_form_title): ?>
     <section class="consult">
       <div class="container">

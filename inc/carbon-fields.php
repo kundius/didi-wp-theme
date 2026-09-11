@@ -44,20 +44,30 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_seo_description', 'Описание'),
     ]);
 
-  Container::make('theme_options', 'Параметры')->add_tab('Общее', [
-    Field::make('textarea', 'crb_theme_site_name', 'Название сайта')->set_rows(2),
-    Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
-    Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
-    Field::make('text', 'crb_theme_phone_caption', 'Телефон / Подпись'),
-    Field::make('text', 'crb_theme_max_link', 'MAX'),
-    Field::make('text', 'crb_theme_email', 'E-mail'),
-    Field::make('text', 'crb_theme_email_caption', 'E-mail / Подпись'),
-    Field::make('textarea', 'crb_theme_address', 'Адерс')->set_rows(2),
-    Field::make('textarea', 'crb_theme_working_hours', 'Контакты / Время работы')->set_rows(4),
-    Field::make('textarea', 'crb_theme_counters', 'Счетчики')->set_rows(2),
-    Field::make('textarea', 'crb_theme_copyright', 'Копирайт')->set_rows(2),
-    Field::make('textarea', 'crb_theme_map_html', 'Карта / HTML код')->set_rows(4),
-  ]);
+  Container::make('theme_options', 'Инфоблоки')
+    ->add_tab('Общее', [
+      Field::make('textarea', 'crb_theme_site_name', 'Название сайта')->set_rows(2),
+      Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
+      Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
+      Field::make('text', 'crb_theme_phone_caption', 'Телефон / Подпись'),
+      Field::make('text', 'crb_theme_max_link', 'MAX'),
+      Field::make('text', 'crb_theme_email', 'E-mail'),
+      Field::make('text', 'crb_theme_email_caption', 'E-mail / Подпись'),
+      Field::make('textarea', 'crb_theme_address', 'Адрес')->set_rows(2),
+      Field::make('textarea', 'crb_theme_working_hours', 'Контакты / Время работы')->set_rows(4),
+      Field::make('textarea', 'crb_theme_counters', 'Счетчики')->set_rows(2),
+      Field::make('textarea', 'crb_theme_copyright', 'Копирайт')->set_rows(2),
+      Field::make('textarea', 'crb_theme_map_html', 'Карта / HTML код')->set_rows(4),
+    ])
+    ->add_tab('Консультация', [
+      Field::make('textarea', 'crb_consult_title', 'Заголовок секции')->set_rows(2),
+      Field::make('complex', 'crb_consult_items', 'Кто может оформить')->add_fields([
+        Field::make('text', 'text', 'Пункт'),
+      ]),
+      Field::make('text', 'crb_consult_note', 'Примечание (например, срок оформления)'),
+      Field::make('textarea', 'crb_consult_form_title', 'Заголовок формы')->set_rows(2),
+      Field::make('text', 'crb_consult_btn_text', 'Текст кнопки'),
+    ]);
 
   Container::make('post_meta', 'Лендинг')
     ->where('post_type', '=', 'page')
@@ -170,14 +180,6 @@ function register_carbon_fields_blocks()
         Field::make('image', 'image', 'Иконка'),
         Field::make('textarea', 'bottom_text', 'Нижний текст')->set_rows(2),
       ]),
-      Field::make('separator', 'separator_consult', 'Секция консультации'),
-      Field::make('textarea', 'crb_consult_title', 'Заголовок секции')->set_rows(2),
-      Field::make('complex', 'crb_consult_items', 'Кто может оформить')->add_fields([
-        Field::make('text', 'text', 'Пункт'),
-      ]),
-      Field::make('text', 'crb_consult_note', 'Примечание (например, срок оформления)'),
-      Field::make('textarea', 'crb_consult_form_title', 'Заголовок формы')->set_rows(2),
-      Field::make('text', 'crb_consult_btn_text', 'Текст кнопки'),
     ]);
 
   // ----- Blocks -----
