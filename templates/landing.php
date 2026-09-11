@@ -72,7 +72,34 @@ Template Name: Лендинг
     </section>
 
     <?php $landsvc_title = carbon_get_post_meta(get_the_ID(), 'landsvc_title'); ?>
-    <?php $landsvc_cards = carbon_get_post_meta(get_the_ID(), 'landsvc_cards'); ?>
+    <?php
+    $landsvc_home_pages = get_posts([
+      'post_type' => 'page',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
+      'meta_key' => '_wp_page_template',
+      'meta_value' => 'templates/service.php',
+    ]);
+    $landsvc_cards = [];
+    foreach ($landsvc_home_pages as $landsvc_home_page) {
+      if (!carbon_get_post_meta($landsvc_home_page->ID, 'crb_service_on_main')) {
+        continue;
+      }
+      $landsvc_image_id = carbon_get_post_meta($landsvc_home_page->ID, 'crb_service_image');
+      if (!$landsvc_image_id) {
+        $landsvc_image_id = get_post_thumbnail_id($landsvc_home_page->ID);
+      }
+      $landsvc_cards[] = [
+        'image' => $landsvc_image_id,
+        'title' => get_the_title($landsvc_home_page->ID),
+        'desc' => carbon_get_post_meta($landsvc_home_page->ID, 'crb_service_desc'),
+        'more_url' => get_permalink($landsvc_home_page->ID),
+        'features' => carbon_get_post_meta($landsvc_home_page->ID, 'crb_service_features'),
+      ];
+    }
+    ?>
     <?php if ($landsvc_cards): ?>
     <section class="landing-services">
       <div class="container">

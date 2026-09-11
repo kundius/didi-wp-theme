@@ -239,6 +239,7 @@ a {
   position: relative;
   z-index: 20;
   border-radius: 30px;
+  margin-top: 36px;
   margin-bottom: 36px;
 
   @media (--min-2xl) {
@@ -257,6 +258,10 @@ a {
   @media (--max-sm) {
     padding: 40px 0;
   }
+}
+
+.page-header + .page-content {
+  margin-top: 0;
 }
 
 .page-header {

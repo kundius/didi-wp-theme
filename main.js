@@ -24,6 +24,7 @@ import { initStickyHeader } from './src/scripts/sticky-header'
 import { initMobileMenu } from './src/scripts/mobile-menu'
 import { initCallbackButton } from './src/scripts/callback-button'
 import { initFeedbackForm } from './src/scripts/feedback-form'
+import { initServicesTabs } from './src/scripts/services-tabs'
 import { initSlideshow } from './src/scripts/slideshow'
 new MaskInput('[data-maska]')
 
@@ -31,4 +32,5 @@ initStickyHeader()
 initMobileMenu()
 initCallbackButton()
 initFeedbackForm()
+initServicesTabs()
 initSlideshow()

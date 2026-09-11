@@ -43,3 +43,22 @@ function feedback_form_callback()
   }
   wp_die();
 }
+
+/**
+ * get_page_content
+ */
+add_action('wp_ajax_get_page_content', 'get_page_content_callback');
+add_action('wp_ajax_nopriv_get_page_content', 'get_page_content_callback');
+function get_page_content_callback()
+{
+  $post_id = isset($_POST['post_id']) ? absint($_POST['post_id']) : 0;
+  if (!$post_id) {
+    wp_send_json_error('Страница не найдена');
+  }
+  $page = get_post($post_id);
+  if (!$page || $page->post_status !== 'publish' || $page->post_type !== 'page') {
+    wp_send_json_error('Страница не найдена');
+  }
+  $content = wp_kses_post(apply_filters('the_content', $page->post_content));
+  wp_send_json_success(['content' => $content]);
+}

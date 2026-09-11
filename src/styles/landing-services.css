@@ -204,6 +204,62 @@
   letter-spacing: -0.05em;
 }
 
+.landing-services__radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.landing-services__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 72px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.landing-services__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 32px;
+  border-radius: var(--svc-tab-active-border-radius, 32px);
+  border: 1px solid var(--svc-tab-active-border, rgb(77, 76, 78));
+  background-color: var(--svc-tab-active-bg, rgba(255, 255, 255, 1));
+  color: var(--svc-tab-active-color, #061151);
+  font-size: var(--svc-tab-active-font-size, 24px);
+  min-height: var(--svc-tab-active-min-height, 64px);
+  opacity: var(--svc-tab-active-opacity, 0.7);
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+
+  @media (--max-lg) {
+    zoom: 0.8;
+  }
+
+  @media (--max-md) {
+    zoom: 0.6;
+  }
+}
+
+.landing-services__tab:hover {
+  --svc-tab-active-opacity: 1;
+}
+
+.landing-services__panels .landing-services__panel {
+  display: none;
+}
+
+.landing-services__content {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 70px 40px;
+}
+
 /* ================= АДАПТИВНОСТЬ (desktop first) ================= */
 
 /* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
@@ -217,6 +273,9 @@
   }
   .landing-services__grid {
     gap: 32px;
+  }
+  .landing-services__content {
+    padding: 56px 32px;
   }
   .landing-services__card {
     padding: 56px 32px;
@@ -256,6 +315,9 @@
   .landing-services__grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+  .landing-services__content {
+    padding: 48px 28px;
   }
   .landing-services__card {
     width: 100%;
@@ -311,6 +373,9 @@
   .landing-services__grid {
     gap: 20px;
   }
+  .landing-services__content {
+    padding: 24px 16px;
+  }
   .landing-services__card {
     padding: 24px 16px;
   }
@@ -354,5 +419,11 @@
   .landing-services__feature-top,
   .landing-services__feature-bottom {
     font-size: 10px;
+  }
+}
+
+@media (--max-sm) {
+  .landing-services__content {
+    padding: 24px 16px;
   }
 }

@@ -151,6 +151,27 @@ function register_carbon_fields_blocks()
       ),
     ]);
 
+  Container::make('post_meta', 'Услуга')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/service.php')
+    ->add_fields([
+      Field::make('select', 'crb_service_type', 'Тип услуги')
+        ->add_options([
+          'Лизинг' => 'Лизинг',
+        ])
+        ->set_default_value('Лизинг'),
+      Field::make('checkbox', 'crb_service_on_main', 'Показывать на главной')->set_default_value(false),
+      Field::make('image', 'crb_service_image', 'Изображение')->set_help_text(
+        'Если не заполнено — используется миниатюра страницы.'
+      ),
+      Field::make('textarea', 'crb_service_desc', 'Описание')->set_rows(2),
+      Field::make('complex', 'crb_service_features', 'Особенности (колонки)')->add_fields([
+        Field::make('textarea', 'top_text', 'Верхний текст')->set_rows(2),
+        Field::make('image', 'image', 'Иконка'),
+        Field::make('textarea', 'bottom_text', 'Нижний текст')->set_rows(2),
+      ]),
+    ]);
+
   // ----- Blocks -----
 
   Block::make('partials_services', 'Блок "Услуги"')
