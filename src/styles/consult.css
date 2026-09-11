@@ -1,0 +1,444 @@
+.consult {
+  padding: 80px 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  color: #ffffff;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(176, 0, 0, 0.55) 0%, transparent 55%),
+    linear-gradient(115deg, #a80000 0%, #4b0054 47%, #200038 57%, #00002b 75%);
+
+  @media (--min-2xl) {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+.consult__inner {
+  display: flex;
+  gap: 80px;
+}
+
+.consult__left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.consult__title {
+  margin: 0 0 56px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.consult__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.consult__item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+* + .consult__item {
+  margin-top: 20px;
+}
+
+.consult__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(45deg, #0000dc, #c8013a 73%);
+}
+
+.consult__icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #ffffff;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.consult__divider {
+  width: 100%;
+  max-width: 440px;
+  height: 2px;
+  margin: 40px 0 24px;
+  background: linear-gradient(90deg, #b06cd5 0%, rgba(176, 108, 213, 0) 100%);
+}
+
+.consult__note {
+  margin: 0;
+  max-width: 440px;
+  font-size: 20px;
+  color: rgba(238, 238, 255, 0.65);
+}
+
+.consult__right {
+  width: 520px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.consult-form {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+}
+
+.consult-form__title {
+  margin: 0 0 32px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.consult-form__input {
+  display: block;
+  width: 100%;
+  height: 64px;
+  padding: 0 24px;
+  font-family: inherit;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+  outline: none;
+}
+
+.consult-form__input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.consult-form__input:focus {
+  border-color: #ffffff;
+}
+
+.consult-form__errors {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #ff9c9c;
+}
+
+.consult-form__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  margin-top: 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #3b6cf5 0%, #8e2de2 100%);
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+[data-feedback-form-status='loading'] .consult-form__submit {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.consult-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: rgba(238, 239, 255, 0.7);
+  text-align: left;
+  cursor: pointer;
+}
+
+.consult-form__consent input {
+  display: none;
+}
+
+.consult-form__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: -1px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 7px;
+}
+
+.consult-form__check svg {
+  width: 16px;
+  height: 16px;
+  stroke: #ffffff;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  visibility: hidden;
+}
+
+.consult-form__consent input:checked + .consult-form__check {
+  background-color: #3b6cf5;
+  border-color: #3b6cf5;
+}
+
+.consult-form__consent input:checked + .consult-form__check svg {
+  visibility: visible;
+}
+
+.consult-form__success {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(20, 5, 45, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+}
+
+[data-feedback-form-status='success'] .consult-form__success {
+  display: flex;
+}
+
+.consult-form__success-title {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.consult-form__success-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.consult-form__success-close {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-xl: 1024px <= width < 1280px (контейнер 1024px, 2 колонки) */
+@media (--max-xl) {
+  .consult {
+    padding: 60px 0;
+  }
+  .consult__inner {
+    gap: 48px;
+  }
+  .consult__title {
+    font-size: 40px;
+    margin-bottom: 48px;
+  }
+  .consult__item {
+    font-size: 22px;
+  }
+  .consult__icon {
+    width: 64px;
+    height: 64px;
+  }
+  .consult__icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .consult__note {
+    font-size: 18px;
+  }
+  .consult__right {
+    width: 460px;
+  }
+  .consult-form {
+    padding: 32px;
+  }
+  .consult-form__title {
+    font-size: 26px;
+  }
+}
+
+/* --max-lg: width < 1024px (контейнер 768px, колонки в столбик;
+   идёт раньше --max-md, поэтому в диапазоне < 768px побеждает --max-md) */
+@media (--max-lg) {
+  .consult {
+    padding: 52px 0;
+    border-radius: 26px;
+  }
+  .consult__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .consult__title {
+    font-size: 34px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .consult__item {
+    font-size: 20px;
+  }
+  .consult__icon {
+    width: 60px;
+    height: 60px;
+  }
+  .consult__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .consult__note {
+    font-size: 17px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .consult__divider {
+    max-width: 100%;
+  }
+  .consult__right {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .consult-form {
+    padding: 36px 32px;
+  }
+  .consult-form__title {
+    text-align: center;
+  }
+}
+
+/* --max-md: width < 768px */
+@media (--max-md) {
+  .consult {
+    padding: 44px 0;
+    border-radius: 24px;
+  }
+  .consult__inner {
+    gap: 32px;
+  }
+  .consult__title {
+    font-size: 30px;
+    margin-bottom: 36px;
+  }
+  .consult__item {
+    font-size: 18px;
+    gap: 18px;
+  }
+  * + .consult__item {
+    margin-top: 16px;
+  }
+  .consult__icon {
+    width: 52px;
+    height: 52px;
+  }
+  .consult__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .consult__divider {
+    margin: 32px 0 20px;
+  }
+  .consult__note {
+    font-size: 16px;
+  }
+  .consult__right {
+    max-width: 480px;
+  }
+  .consult-form {
+    padding: 28px 24px;
+    border-radius: 22px;
+  }
+  .consult-form__title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .consult-form__input {
+    height: 56px;
+    font-size: 16px;
+  }
+  .consult-form__submit {
+    height: 56px;
+    font-size: 16px;
+  }
+}
+
+/* --max-sm: width < 640px (контейнер 100%, padding 12px) */
+@media (--max-sm) {
+  .consult {
+    padding: 36px 0;
+    border-radius: 20px;
+  }
+  .consult__title {
+    font-size: 26px;
+  }
+  .consult__item {
+    font-size: 16px;
+  }
+  .consult__icon {
+    width: 46px;
+    height: 46px;
+  }
+  .consult__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .consult__note {
+    font-size: 15px;
+  }
+  .consult__right {
+    max-width: 100%;
+  }
+  .consult-form {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+  .consult-form__title {
+    font-size: 20px;
+  }
+  .consult-form__input {
+    height: 52px;
+    padding: 0 16px;
+    font-size: 15px;
+  }
+  .consult-form__submit {
+    height: 52px;
+    font-size: 15px;
+  }
+  .consult-form__consent {
+    font-size: 13px;
+  }
+}

@@ -170,6 +170,14 @@ function register_carbon_fields_blocks()
         Field::make('image', 'image', 'Иконка'),
         Field::make('textarea', 'bottom_text', 'Нижний текст')->set_rows(2),
       ]),
+      Field::make('separator', 'separator_consult', 'Секция консультации'),
+      Field::make('textarea', 'crb_consult_title', 'Заголовок секции')->set_rows(2),
+      Field::make('complex', 'crb_consult_items', 'Кто может оформить')->add_fields([
+        Field::make('text', 'text', 'Пункт'),
+      ]),
+      Field::make('text', 'crb_consult_note', 'Примечание (например, срок оформления)'),
+      Field::make('textarea', 'crb_consult_form_title', 'Заголовок формы')->set_rows(2),
+      Field::make('text', 'crb_consult_btn_text', 'Текст кнопки'),
     ]);
 
   // ----- Blocks -----

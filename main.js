@@ -16,6 +16,7 @@ import './src/styles/slideshow.css'
 import './src/styles/footer.css'
 import './src/styles/breadcrumbs.css'
 import './src/styles/contacts.css'
+import './src/styles/consult.css'
 
 import fslightbox from 'fslightbox'
 import { Mask, MaskInput } from 'maska'
