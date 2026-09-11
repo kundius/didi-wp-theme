@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Услуги
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
 
@@ -30,6 +35,7 @@
       <h1 class="page-title"><?php the_title(); ?></h1>
     </div>
 
+    <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
     <div class="page-content">
       <div class="container">
         <div class="page-content__inner content">
@@ -37,6 +43,7 @@
         </div>
       </div>
     </div>
+    <?php endif; ?>
 
     <?php get_template_part('partials/feedback'); ?>
 

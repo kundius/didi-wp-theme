@@ -8,14 +8,14 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="page-layout">
+  <div class="page-main">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="page-layout__body">
+    <div class="page-content">
       <div class="container">
         <h1 class="page-title">404</h1>
 
-        <div class="page-content">
+        <div class="page-content__inner content">
           Страница не найдена
         </div>
       </div>

@@ -13,7 +13,7 @@ Template Name: Лендинг
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="page-layout">
+  <div class="page-main">
     <?php get_template_part('partials/header'); ?>
 
     <section class="intro">
@@ -467,9 +467,9 @@ Template Name: Лендинг
     <?php endif; ?>
 
     <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
-    <div class="page-layout__body">
+    <div class="page-content">
       <div class="container">
-        <div class="page-content">
+        <div class="page-content__inner content">
           <?php the_content(); ?>
         </div>
       </div>

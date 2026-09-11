@@ -19,10 +19,10 @@ $articles = new WP_Query($query_params);
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="page-layout">
+  <div class="page-main">
     <?php get_template_part('partials/header'); ?>
 
-    <div class="page-layout__body">
+    <div class="page-content">
       <div class="container">
         <ol class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList" aria-label="Хлебные крошки">
           <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">

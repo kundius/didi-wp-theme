@@ -82,7 +82,7 @@ a {
   }
 }
 
-.page-content {
+.content {
   font-size: 18px;
   line-height: 1.33;
   color: #131313;
@@ -99,27 +99,27 @@ a {
   }
 }
 
-.page-content a {
+.content a {
   color: inherit;
 }
 
-.page-content p {
+.content p {
   margin: 0;
 }
 
-.page-content * + p {
+.content * + p {
   margin-top: 1.5em;
 }
 
-.page-content ul {
+.content ul {
   margin: 0;
 }
 
-.page-content * + ul {
+.content * + ul {
   margin-top: 1.5em;
 }
 
-.page-content h2 {
+.content h2 {
   margin: 0;
   font-weight: 500;
   color: #061151;
@@ -134,7 +134,7 @@ a {
   }
 }
 
-.page-content h2::before {
+.content h2::before {
   content: '';
   position: absolute;
   width: 6px;
@@ -147,11 +147,11 @@ a {
   transform: translateY(-50%);
 }
 
-.page-content * + h2 {
+.content * + h2 {
   margin-top: 1.5em;
 }
 
-.page-content h3 {
+.content h3 {
   margin: 0;
   font-weight: 500;
   color: #061151;
@@ -163,62 +163,68 @@ a {
   }
 }
 
-.page-content * + h3 {
+.content * + h3 {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-quote {
+.content .wp-block-quote {
+  margin: 0;
+  margin-left: 156px;
+  border-left: 16px solid #437aee;
+  padding-left: 30px;
+
+  @media (--max-md) {
+    margin-left: 0;
+    padding-left: 24px;
+    border-left-width: 12px;
+  }
+}
+
+.content * + .wp-block-quote {
+  margin-top: 1.5em;
+}
+
+.content .wp-block-slideshow {
   margin: 0;
 }
 
-.page-content * + .wp-block-quote {
+.content * + .wp-block-slideshow {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-slideshow {
+.content .wp-block-image {
   margin: 0;
 }
 
-.page-content * + .wp-block-slideshow {
+.content * + .wp-block-image {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-image {
+.content .wp-block-columns {
   margin: 0;
 }
 
-.page-content * + .wp-block-image {
+.content * + .wp-block-columns {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-columns {
+.content .wp-block-gallery {
   margin: 0;
 }
 
-.page-content * + .wp-block-columns {
+.content * + .wp-block-gallery {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-gallery {
+.content .wp-block-buttons {
   margin: 0;
 }
 
-.page-content * + .wp-block-gallery {
+.content * + .wp-block-buttons {
   margin-top: 1.5em;
 }
 
-.page-content .wp-block-buttons {
-  margin: 0;
-}
-
-.page-content * + .wp-block-buttons {
-  margin-top: 1.5em;
-}
-
-.page-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.page-main {
   background: url('../images/page-bg.jpg') no-repeat 50% 0;
 
   @media (min-width: 1920px) {
@@ -226,13 +232,14 @@ a {
   }
 }
 
-.page-layout__body {
-  flex-grow: 1;
+.page-content {
+  min-height: calc(100vh - 789px);
   background-color: rgb(255, 255, 255);
   padding: 80px 0;
   position: relative;
   z-index: 20;
   border-radius: 30px;
+  margin-bottom: 36px;
 
   @media (--min-2xl) {
     margin-left: 2vw;
@@ -252,7 +259,7 @@ a {
   }
 }
 
-.page-layout__header {
+.page-header {
   display: flex;
   flex-direction: column;
   gap: 20px;
