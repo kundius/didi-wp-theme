@@ -164,12 +164,6 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
     <?php $crb_advantages_bg_image = carbon_get_theme_option('crb_advantages_bg_image'); ?>
     <?php $crb_advantages_cards = carbon_get_theme_option('crb_advantages_cards'); ?>
     <?php if ($crb_advantages_title || !empty($crb_advantages_cards)): ?>
-    <?php $crb_advantages_icons = [
-      'wallet' => '<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M16 14h2"/></svg>',
-      'car' => '<svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>',
-      'check' => '<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
-      'clock' => '<svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9h-3m-3-6v6l4 2"/></svg>',
-    ]; ?>
     <section class="advantages"<?php if ($crb_advantages_bg_image): ?> style="background-image: linear-gradient(rgba(0, 15, 30, 0.55), rgba(0, 15, 30, 0.8)), url('<?php echo esc_url(
       wp_get_attachment_image_url($crb_advantages_bg_image, 'full'),
     ); ?>');"<?php endif; ?>>
@@ -186,12 +180,13 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
                 empty($crb_advantages_card['desc'])
               ) { continue; } ?>
               <div class="advantages__card">
-                <?php if (!empty($crb_advantages_card['icon']) && isset(
-                  $crb_advantages_icons[$crb_advantages_card['icon']],
-                )): ?>
-                  <div class="advantages__icon" aria-hidden="true"><?php echo $crb_advantages_icons[
-                    $crb_advantages_card['icon']
-                  ]; ?></div>
+                <?php if (!empty($crb_advantages_card['icon'])): ?>
+                  <div class="advantages__icon">
+                    <img src="<?php echo esc_url(wp_get_attachment_image_url(
+                      $crb_advantages_card['icon'],
+                      'medium',
+                    )); ?>" alt="" />
+                  </div>
                 <?php endif; ?>
                 <div class="advantages__text">
                   <?php if (!empty($crb_advantages_card['title'])): ?>

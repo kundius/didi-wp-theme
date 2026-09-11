@@ -74,13 +74,7 @@ function register_carbon_fields_blocks()
         'Фото на тёмном фоне секции. Без него остаётся только затемнение.'
       ),
       Field::make('complex', 'crb_advantages_cards', 'Карточки')->add_fields([
-        Field::make('select', 'icon', 'Иконка')
-          ->add_options([
-            'wallet' => 'Кошелёк',
-            'car' => 'Автомобиль',
-            'check' => 'Галочка',
-            'clock' => 'Часы',
-          ]),
+        Field::make('image', 'icon', 'Иконка'),
         Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
         Field::make('textarea', 'desc', 'Описание')->set_rows(2),
       ]),
