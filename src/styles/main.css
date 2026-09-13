@@ -332,7 +332,6 @@ a {
   border: none;
 }
 
-.news-grid,
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -345,34 +344,6 @@ a {
   @media (--max-md) {
     grid-template-columns: 1fr;
   }
-}
-
-.news-card__image {
-  display: block;
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.news-card__date {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #949494;
-}
-
-.news-card__title {
-  margin: 8px 0 0;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.news-card__excerpt {
-  margin-top: 8px;
-  font-size: 16px;
 }
 
 .review-card__image img {
