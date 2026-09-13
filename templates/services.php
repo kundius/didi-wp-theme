@@ -186,84 +186,86 @@ if (!function_exists('didi_render_svc_card')) {
       <h1 class="page-title"><?php the_title(); ?></h1>
     </div>
 
-    <?php if ($svc_children): ?>
-    <section class="landing-services" data-services-tabs>
-      <div class="container">
-        <?php
-        $svc_tab_index = 0;
-        foreach ($svc_tabs as $svc_tab):
-        ?>
-          <input type="radio" class="landing-services__radio"
-            id="svc-<?php echo esc_attr($svc_tab['id']); ?>"
-            name="services-page-tabs"
-            <?php echo $svc_tab_index === 0 ? 'checked' : ''; ?>
-            <?php if (!empty($svc_tab['page_id'])): ?>
-              data-svc-page-id="<?php echo esc_attr($svc_tab['page_id']); ?>"
-            <?php endif; ?>>
-          <?php $svc_tab_index++; ?>
-        <?php endforeach; ?>
-
-        <style>
-          <?php foreach ($svc_tabs as $svc_tab): ?>
-          #svc-<?php echo esc_attr($svc_tab['id']); ?>:checked ~ .landing-services__tabs label[for='svc-<?php echo esc_attr($svc_tab['id']); ?>'] {
-            --svc-tab-active-bg: #0c0c64;
-            --svc-tab-active-border: #0c0c64;
-            --svc-tab-active-color: #ffffff;
-            --svc-tab-active-font-size: 36px;
-            --svc-tab-active-border-radius: 36px;
-            --svc-tab-active-min-height: 72px;
-            --svc-tab-hover-bg: #0c0c64;
-            --svc-tab-hover-color: #ffffff;
-            --svc-tab-active-opacity: 1;
-          }
-          #svc-<?php echo esc_attr($svc_tab['id']); ?>:checked ~ .landing-services__panels .landing-services__panel[data-svc-panel="<?php echo esc_attr($svc_tab['panel']); ?>"] {
-            display: block;
-          }
+    <div class="page-main__body">
+      <?php if ($svc_children): ?>
+      <section class="landing-services" data-services-tabs>
+        <div class="container">
+          <?php
+          $svc_tab_index = 0;
+          foreach ($svc_tabs as $svc_tab):
+          ?>
+            <input type="radio" class="landing-services__radio"
+              id="svc-<?php echo esc_attr($svc_tab['id']); ?>"
+              name="services-page-tabs"
+              <?php echo $svc_tab_index === 0 ? 'checked' : ''; ?>
+              <?php if (!empty($svc_tab['page_id'])): ?>
+                data-svc-page-id="<?php echo esc_attr($svc_tab['page_id']); ?>"
+              <?php endif; ?>>
+            <?php $svc_tab_index++; ?>
           <?php endforeach; ?>
-        </style>
 
-        <div class="landing-services__tabs">
-          <?php foreach ($svc_tabs as $svc_tab): ?>
-            <label class="landing-services__tab" for="svc-<?php echo esc_attr($svc_tab['id']); ?>">
-              <?php echo nl2br(esc_html($svc_tab['label'])); ?>
-            </label>
-          <?php endforeach; ?>
-        </div>
+          <style>
+            <?php foreach ($svc_tabs as $svc_tab): ?>
+            #svc-<?php echo esc_attr($svc_tab['id']); ?>:checked ~ .landing-services__tabs label[for='svc-<?php echo esc_attr($svc_tab['id']); ?>'] {
+              --svc-tab-active-bg: #0c0c64;
+              --svc-tab-active-border: #0c0c64;
+              --svc-tab-active-color: #ffffff;
+              --svc-tab-active-font-size: 36px;
+              --svc-tab-active-border-radius: 36px;
+              --svc-tab-active-min-height: 72px;
+              --svc-tab-hover-bg: #0c0c64;
+              --svc-tab-hover-color: #ffffff;
+              --svc-tab-active-opacity: 1;
+            }
+            #svc-<?php echo esc_attr($svc_tab['id']); ?>:checked ~ .landing-services__panels .landing-services__panel[data-svc-panel="<?php echo esc_attr($svc_tab['panel']); ?>"] {
+              display: block;
+            }
+            <?php endforeach; ?>
+          </style>
 
-        <div class="landing-services__panels">
-          <?php foreach ($svc_groups as $svc_group_index => $svc_group): ?>
-            <div class="landing-services__panel" data-svc-panel="type-<?php echo esc_attr($svc_group_index); ?>">
-              <div class="landing-services__grid">
-                <?php foreach ($svc_group['cards'] as $svc_card): ?>
-                  <?php didi_render_svc_card($svc_card); ?>
-                <?php endforeach; ?>
+          <div class="landing-services__tabs">
+            <?php foreach ($svc_tabs as $svc_tab): ?>
+              <label class="landing-services__tab" for="svc-<?php echo esc_attr($svc_tab['id']); ?>">
+                <?php echo nl2br(esc_html($svc_tab['label'])); ?>
+              </label>
+            <?php endforeach; ?>
+          </div>
+
+          <div class="landing-services__panels">
+            <?php foreach ($svc_groups as $svc_group_index => $svc_group): ?>
+              <div class="landing-services__panel" data-svc-panel="type-<?php echo esc_attr($svc_group_index); ?>">
+                <div class="landing-services__grid">
+                  <?php foreach ($svc_group['cards'] as $svc_card): ?>
+                    <?php didi_render_svc_card($svc_card); ?>
+                  <?php endforeach; ?>
+                </div>
               </div>
-            </div>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
 
-          <?php foreach ($svc_info_pages as $svc_info_page): ?>
-            <div class="landing-services__panel"
-              data-svc-panel="page-<?php echo esc_attr($svc_info_page->ID); ?>"
-              data-svc-page-id="<?php echo esc_attr($svc_info_page->ID); ?>">
-              <div class="landing-services__content content"></div>
-            </div>
-          <?php endforeach; ?>
+            <?php foreach ($svc_info_pages as $svc_info_page): ?>
+              <div class="landing-services__panel"
+                data-svc-panel="page-<?php echo esc_attr($svc_info_page->ID); ?>"
+                data-svc-page-id="<?php echo esc_attr($svc_info_page->ID); ?>">
+                <div class="landing-services__content content"></div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </section>
+      <?php endif; ?>
+
+      <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
+      <div class="page-content">
+        <div class="container">
+          <div class="page-content__inner content">
+            <?php the_content(); ?>
+          </div>
         </div>
       </div>
-    </section>
-    <?php endif; ?>
+      <?php endif; ?>
 
-    <?php if (trim(get_post_field('post_content', get_the_ID()))): ?>
-    <div class="page-content">
-      <div class="container">
-        <div class="page-content__inner content">
-          <?php the_content(); ?>
-        </div>
-      </div>
+      <?php get_template_part('partials/feedback'); ?>
     </div>
-    <?php endif; ?>
-
-    <?php get_template_part('partials/feedback'); ?>
 
     <?php get_template_part('partials/footer'); ?>
   </div>

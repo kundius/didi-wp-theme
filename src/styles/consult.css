@@ -1,13 +1,13 @@
 .consult {
-  padding: 80px 0;
+  padding: 12px 0;
   margin-top: 32px;
   margin-bottom: 32px;
   position: relative;
   color: #ffffff;
   border-radius: 30px;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(176, 0, 0, 0.55) 0%, transparent 55%),
-    linear-gradient(115deg, #a80000 0%, #4b0054 47%, #200038 57%, #00002b 75%);
+  z-index: 1;
+  background: url('../images/why-bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
 
   @media (--min-2xl) {
     margin-left: 2vw;
@@ -26,14 +26,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /*padding: 40px 0 0 0;*/
 }
 
 .consult__title {
-  margin: 0 0 56px;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.15;
+  margin: 0 0 42px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .consult__list {
@@ -45,10 +47,11 @@
 .consult__item {
   display: flex;
   align-items: center;
-  gap: 24px;
-  font-size: 24px;
+  gap: 16px;
+  font-size: 30px;
+  line-height: 1;
   font-weight: 400;
-  color: #ffffff;
+  color: #b9b9b9;
 }
 
 * + .consult__item {
@@ -59,17 +62,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: linear-gradient(45deg, #0000dc, #c8013a 73%);
+  background: #dbdbdb;
 }
 
 .consult__icon svg {
   width: 28px;
   height: 28px;
-  stroke: #ffffff;
+  stroke: #4f4f4f;
   stroke-width: 3;
   fill: none;
   stroke-linecap: round;
@@ -79,53 +82,55 @@
 .consult__divider {
   width: 100%;
   max-width: 440px;
-  height: 2px;
-  margin: 40px 0 24px;
-  background: linear-gradient(90deg, #b06cd5 0%, rgba(176, 108, 213, 0) 100%);
+  background-color: rgba(67, 122, 238, 0.149);
+  height: 1px;
+  margin: 30px 0 12px;
 }
 
 .consult__note {
   margin: 0;
-  max-width: 440px;
-  font-size: 20px;
-  color: rgba(238, 238, 255, 0.65);
+  font-size: 18px;
+  color: #999999;
+  padding-left: 64px;
 }
 
 .consult__right {
-  width: 520px;
   flex-shrink: 0;
   display: flex;
+  justify-content: center;
 }
 
 .consult-form {
   position: relative;
   width: 100%;
-  padding: 40px;
-  border-radius: 28px;
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
+  padding: 40px 80px;
+  border-radius: 30px;
+  background-color: rgba(240, 240, 240, 0.149);
+  max-width: 480px;
 }
 
 .consult-form__title {
   margin: 0 0 32px;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.25;
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
   color: #ffffff;
 }
 
 .consult-form__input {
   display: block;
   width: 100%;
-  height: 64px;
+  height: 48px;
   padding: 0 24px;
   font-family: inherit;
   font-size: 18px;
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.16);
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  border-radius: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255, 0.29);
+  border-radius: 24px;
+  background-color: transparent;
   outline: none;
 }
 
@@ -143,37 +148,16 @@
   color: #ff9c9c;
 }
 
-.consult-form__submit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 64px;
-  margin-top: 20px;
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(90deg, #3b6cf5 0%, #8e2de2 100%);
-  border: 0;
-  border-radius: 14px;
-  cursor: pointer;
-}
-
-[data-feedback-form-status='loading'] .consult-form__submit {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
 .consult-form__consent {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   margin-top: 22px;
   font-size: 14px;
-  color: rgba(238, 239, 255, 0.7);
+  color: rgba(255, 255, 255, 0.48);
   text-align: left;
   cursor: pointer;
+  padding: 0 24px;
 }
 
 .consult-form__consent input {

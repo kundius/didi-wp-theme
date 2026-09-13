@@ -50,8 +50,6 @@ if (!empty($nf_contacts_pages)) {
   <?php wp_body_open(); ?>
 
   <div class="page-main">
-    <?php get_template_part('partials/header'); ?>
-
     <main class="notfound">
       <div class="notfound__bg" aria-hidden="true">
         <span class="notfound__grid"></span>
@@ -100,8 +98,6 @@ if (!empty($nf_contacts_pages)) {
         </div>
       </div>
     </main>
-
-    <?php get_template_part('partials/footer'); ?>
   </div>
 </body>
 

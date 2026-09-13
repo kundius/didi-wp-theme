@@ -3,8 +3,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 160px);
-  padding: 72px 0 96px;
+  min-height: 100vh;
+  padding: 96px 0;
   color: #ffffff;
   text-align: center;
   background:
