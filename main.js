@@ -18,6 +18,7 @@ import './src/styles/breadcrumbs.css'
 import './src/styles/contacts.css'
 import './src/styles/news.css'
 import './src/styles/sitemap.css'
+import './src/styles/notfound.css'
 import './src/styles/consult.css'
 import './src/styles/advantages.css'
 
