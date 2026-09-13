@@ -40,7 +40,7 @@
     <div class="feedback-form__action">
       <button type="submit" class="feedback-form__submit">ОТПРАВИТЬ</button>
       <p class="feedback-form__privacy">
-        Нажимая «Отправить», вы подтверждаете, что ознакомились с <a href="#">Политикой конфиденциальности</a> и даете согласие на <a href="#">Обработку персональных данных</a>
+        Нажимая «Отправить», вы подтверждаете, что ознакомились с <a href="<?php echo esc_url(didi_privacy_url()); ?>">Политикой конфиденциальности</a> и даете согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>">Обработку персональных данных</a>
       </p>
     </div>
 

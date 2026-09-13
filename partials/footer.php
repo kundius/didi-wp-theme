@@ -99,7 +99,7 @@
           </div>
 
           <div class="modal-form__rules">
-            Заполняя поля формы, Вы даете согласие на обработку персональных данных
+            Заполняя поля формы, Вы даете согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>">обработку персональных данных</a>
           </div>
 
           <div class="modal-form-success">

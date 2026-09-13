@@ -23,6 +23,16 @@ add_shortcode('partial', function ($atts, $content = null) {
   return $output;
 });
 
+function didi_privacy_url()
+{
+  return get_permalink(3);
+}
+
+function didi_user_agreement_url()
+{
+  return get_permalink(12);
+}
+
 add_shortcode('sitemap', function () {
   $sitemap = '<section class="sitemap">';
 

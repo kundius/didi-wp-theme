@@ -472,11 +472,11 @@ Template Name: Лендинг
               </button>
 
               <label class="approval__consent">
-                <input type="checkbox" value="1" name="approval" checked>
+                <input type="checkbox" value="1" name="approval">
                 <span class="approval__consent-check">
                   <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
-                <span>Соглашаюсь с политикой обработки персональных данных</span>
+                <span><a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">Соглашаюсь с политикой обработки персональных данных</a></span>
               </label>
 
               <div class="approval__success">
