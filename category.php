@@ -54,15 +54,17 @@ $articles = new WP_Query($query_params);
             <?php $articles->the_post(); ?>
             <article class="news-grid__item">
               <?php if (has_post_thumbnail()): ?>
-                <a class="news-card__image" href="<?php the_permalink(); ?>">
+                <div class="news-card__image">
                   <?php the_post_thumbnail('large'); ?>
-                </a>
+                </div>
               <?php endif; ?>
               <div class="news-card__date"><?php echo get_the_date(); ?></div>
-              <h2 class="news-card__title">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              </h2>
+              <h2 class="news-card__title"><?php the_title(); ?></h2>
               <div class="news-card__excerpt"><?php the_excerpt(); ?></div>
+              <a class="news-card__more" href="<?php the_permalink(); ?>">
+                Подробнее
+                <span class="icon icon-arrow-right"></span>
+              </a>
             </article>
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>
