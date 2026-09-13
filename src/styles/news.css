@@ -58,6 +58,14 @@
   color: #6d6d6f;
 }
 
+.news-card__excerpt p {
+  margin: 0;
+}
+
+.news-card__excerpt * + p {
+  margin-top: 8px;
+}
+
 .news-card__more {
   display: inline-flex;
   align-items: center;
