@@ -134,7 +134,7 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
                   <span class="consult-form__check">
                     <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
                   </span>
-                  <span><a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">Соглашаюсь с политикой обработки персональных данных</a></span>
+                  <span>Соглашаюсь с <a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">политикой обработки персональных данных</a></span>
                 </label>
 
                 <div class="consult-form__success">
