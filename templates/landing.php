@@ -476,7 +476,7 @@ Template Name: Лендинг
                 <span class="approval__consent-check">
                   <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
-                <span>Соглашаюсь с <a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">политикой обработки персональных данных</a></span>
+                <span>Соглашаюсь с <a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">Политикой конфиденциальности</a> и даю согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>" onclick="event.stopPropagation()">Обработку персональных данных</a></span>
               </label>
 
               <div class="approval__success">
