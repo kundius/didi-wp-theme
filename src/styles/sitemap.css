@@ -1,0 +1,99 @@
+.sitemap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.sitemap__group {
+  background-color: rgb(246, 247, 249);
+  border-radius: 24px;
+  padding: 40px 44px;
+}
+
+.sitemap .sitemap__title {
+  margin: 0 0 28px;
+  padding-left: 0;
+  position: static;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #061151;
+}
+
+.sitemap .sitemap__title::before {
+  content: none;
+}
+
+.sitemap .sitemap__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemap__list > li + li {
+  margin-top: 12px;
+}
+
+.sitemap__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sitemap__link:hover {
+  color: #c8013a;
+}
+
+.sitemap .sitemap__sublist {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  list-style: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sitemap__sublist li + li {
+  margin-top: 8px;
+}
+
+.sitemap__sublist .sitemap__link {
+  font-size: 16px;
+  color: #3b3b3b;
+}
+
+.sitemap__sublist .sitemap__link:hover {
+  color: #c8013a;
+}
+
+.sitemap__list .children {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  list-style: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sitemap__list .children li + li {
+  margin-top: 8px;
+}
+
+/* ================= АДАПТИВНОСТЬ (desktop first) ================= */
+
+/* --max-lg: width < 1024px (группы в одну колонку) */
+@media (--max-lg) {
+  .sitemap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* --max-sm: width < 640px */
+@media (--max-sm) {
+  .sitemap__group {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  .sitemap .sitemap__title {
+    font-size: 20px;
+    margin-bottom: 22px;
+  }
+}
