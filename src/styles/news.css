@@ -21,11 +21,6 @@
   background-color: rgb(246, 247, 249);
   border-radius: 24px;
   padding: 20px 20px 28px;
-  transition: box-shadow 0.3s ease;
-}
-
-.news-grid__item:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
 }
 
 .news-card__image {
