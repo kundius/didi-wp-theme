@@ -42,10 +42,10 @@ $articles = new WP_Query($query_params);
     </div>
 
     <div class="page-main__body">
-      <div class="page-content">
+      <div class="landing-services">
         <div class="container">
           <?php if (term_description()): ?>
-            <div class="page-content__inner content">
+            <div class="landing-services__content content">
               <?php echo wpautop(term_description()); ?>
             </div>
           <?php endif; ?>
