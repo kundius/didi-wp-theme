@@ -192,6 +192,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    order: 100;
+    margin-right: 0;
+  }
+
+  .header-logo__tagline {
+    display: none;
   }
 
   .header-overlay {
@@ -226,6 +232,9 @@
 
 /* --max-sm: телефон и кнопки в 2 ряда, оба ряда в пределах высоты шапки (64px) */
 @media (--max-sm) {
+  .header-logo {
+    width: 64px;
+  }
   .header-layout {
     gap: 12px;
   }
@@ -237,20 +246,39 @@
     justify-content: flex-end;
     align-content: center;
     gap: 2px 12px;
+    margin-left: auto;
   }
   .header-phone {
-    flex-basis: 100%;
-    justify-content: flex-end;
-    font-size: 14px;
-    line-height: 1.2;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #940000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
   }
+
+  .header-phone:hover {
+    border-bottom-color: transparent;
+  }
+
+  .header-phone__icon {
+    display: flex;
+  }
+
+  .header-phone__number {
+    display: none;
+  }
+
   .header-request {
-    font-size: 11px;
-    line-height: 1.2;
-    padding: 4px 10px;
+    display: none;
   }
+
   .header-max {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
 }
