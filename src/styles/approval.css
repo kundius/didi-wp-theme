@@ -162,46 +162,16 @@
 
 .approval__consent {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
   font-size: 14px;
   color: rgba(254, 254, 254, 0.478);
-  text-align: left;
-  cursor: pointer;
+  text-align: center;
   margin-left: 24px;
   margin-right: 24px;
   margin-top: 16px;
 }
 
-.approval__consent input {
-  display: none;
-}
-
-.approval__consent-check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  margin-top: -2px;
-  background-color: #2f5fe3;
-  border: 1px solid #2f5fe3;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.approval__consent-check svg {
-  width: 20px;
-  height: 20px;
-  stroke: #ffffff;
-  stroke-width: 3;
-  fill: none;
-  visibility: hidden;
-}
-
-.approval__consent input:checked + .approval__consent-check svg {
-  visibility: visible;
+.approval__consent a {
+  color: inherit;
 }
 
 .approval__success {

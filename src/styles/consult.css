@@ -149,52 +149,15 @@
 }
 
 .consult-form__consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
   margin-top: 22px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.48);
-  text-align: left;
-  cursor: pointer;
+  text-align: center;
   padding: 0 24px;
 }
 
-.consult-form__consent input {
-  display: none;
-}
-
-.consult-form__check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 22px;
-  height: 22px;
-  margin-top: -1px;
-  flex-shrink: 0;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 7px;
-}
-
-.consult-form__check svg {
-  width: 16px;
-  height: 16px;
-  stroke: #ffffff;
-  stroke-width: 3;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  visibility: hidden;
-}
-
-.consult-form__consent input:checked + .consult-form__check {
-  background-color: #3b6cf5;
-  border-color: #3b6cf5;
-}
-
-.consult-form__consent input:checked + .consult-form__check svg {
-  visibility: visible;
+.consult-form__consent a {
+  color: inherit;
 }
 
 .consult-form__success {

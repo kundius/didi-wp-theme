@@ -125,6 +125,7 @@
   }
   .advantages__card-title {
     font-size: 18px;
+    min-height: 0;
   }
   .advantages__card-desc {
     font-size: 14px;

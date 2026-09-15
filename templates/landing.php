@@ -471,13 +471,9 @@ Template Name: Лендинг
                 <?php echo esc_html($approval_btn_text ?: 'Оставить заявку'); ?>
               </button>
 
-              <label class="approval__consent">
-                <input type="checkbox" value="1" name="approval">
-                <span class="approval__consent-check">
-                  <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span>Соглашаюсь с <a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">Политикой конфиденциальности</a> и даю согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>" onclick="event.stopPropagation()">Обработку персональных данных</a></span>
-              </label>
+              <div class="approval__consent">
+                Нажимая «Отправить», вы подтверждаете, что ознакомились с <a href="<?php echo esc_url(didi_privacy_url()); ?>">Политикой конфиденциальности</a> и даете согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>">Обработку персональных данных</a>
+              </div>
 
               <div class="approval__success">
                 <div class="approval__success-title">Заявка отправлена</div>

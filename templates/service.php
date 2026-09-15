@@ -129,13 +129,9 @@ $svc_current_position = $svc_parent_id ? 3 : 2;
                   <?php echo esc_html($crb_consult_btn_text); ?>
                 </button>
 
-                <label class="consult-form__consent">
-                  <input type="checkbox" value="1" name="consent" required>
-                  <span class="consult-form__check">
-                    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                  </span>
-                  <span>Соглашаюсь с <a href="<?php echo esc_url(didi_privacy_url()); ?>" onclick="event.stopPropagation()">Политикой конфиденциальности</a> и даю согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>" onclick="event.stopPropagation()">Обработку персональных данных</a></span>
-                </label>
+                <div class="consult-form__consent">
+                  Нажимая «Отправить», вы подтверждаете, что ознакомились с <a href="<?php echo esc_url(didi_privacy_url()); ?>">Политикой конфиденциальности</a> и даете согласие на <a href="<?php echo esc_url(didi_user_agreement_url()); ?>">Обработку персональных данных</a>
+                </div>
 
                 <div class="consult-form__success">
                   <div class="consult-form__success-title">Заявка отправлена</div>
