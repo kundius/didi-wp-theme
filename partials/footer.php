@@ -15,8 +15,8 @@
 
       <?php $footer_email = carbon_get_theme_option('crb_theme_email'); ?>
       <?php if ($footer_email): ?>
-        <a itemprop="email" href="mailto:<?php echo esc_attr($footer_email); ?>">
-          Email: <?php echo esc_html($footer_email); ?>
+        <a href="mailto:<?php echo esc_attr($footer_email); ?>">
+          Email: <span itemprop="email"><?php echo esc_html($footer_email); ?></span>
         </a>
       <?php endif; ?>
     </div>

@@ -49,14 +49,14 @@ Template Name: Контакты
         $contacts_address ||
         !empty(trim($contacts_schedules))
       ): ?>
-      <section class="contacts-cards" itemscope itemtype="https://schema.org/Organization">
+      <section class="contacts-cards">
         <div class="contacts-cards__grid">
           <?php if ($contacts_phone): ?>
           <div class="contacts-card">
             <div class="contacts-card__icon"><img src="<?php echo esc_url(get_theme_file_uri('assets/contacts-1.png')); ?>"
               alt="" width="76" height="81"></div>
             <h3 class="contacts-card__title">Телефон</h3>
-            <p class="contacts-card__bold" itemprop="telephone"><?php echo esc_html($contacts_phone); ?></p>
+            <p class="contacts-card__bold"><?php echo esc_html($contacts_phone); ?></p>
             <?php $contacts_phone_caption = carbon_get_theme_option(
               'crb_theme_phone_caption',
             ); ?>
@@ -73,7 +73,7 @@ Template Name: Контакты
             <div class="contacts-card__icon"><img src="<?php echo esc_url(get_theme_file_uri('assets/contacts-2.png')); ?>"
               alt="" width="74" height="72"></div>
             <h3 class="contacts-card__title">Наш E-mail</h3>
-            <p class="contacts-card__bold" itemprop="email"><?php echo esc_html($contacts_email); ?></p>
+            <p class="contacts-card__bold"><?php echo esc_html($contacts_email); ?></p>
             <?php $contacts_email_caption = carbon_get_theme_option(
               'crb_theme_email_caption',
             ); ?>
@@ -86,7 +86,7 @@ Template Name: Контакты
           <?php endif; ?>
 
           <?php if ($contacts_address): ?>
-          <div class="contacts-card" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <div class="contacts-card">
             <div class="contacts-card__icon"><img src="<?php echo esc_url(get_theme_file_uri('assets/contacts-3.png')); ?>"
               alt="" width="58" height="71"></div>
             <h3 class="contacts-card__title">Наш адрес</h3>
