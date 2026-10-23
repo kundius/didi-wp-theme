@@ -8,8 +8,8 @@
     <div class="footer__contacts">
       <?php $footer_phone = carbon_get_theme_option('crb_theme_phone_number'); ?>
       <?php if ($footer_phone): ?>
-        <a itemprop="telephone" href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
-          <?php echo esc_html($footer_phone); ?>
+        <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
+          <span itemprop="telephone"><?php echo esc_html($footer_phone); ?></span>
         </a>
       <?php endif; ?>
 
