@@ -55,6 +55,9 @@ function register_carbon_fields_blocks()
       Field::make('text', 'crb_theme_email_caption', 'E-mail / Подпись'),
       Field::make('textarea', 'crb_theme_address', 'Адрес')->set_rows(2),
       Field::make('textarea', 'crb_theme_working_hours', 'Контакты / Время работы')->set_rows(4),
+      Field::make('image', 'crb_theme_og_image', 'OG изображение (соцсети / Yandex Webmaster)')->set_help_text(
+        'Используется, если у страницы нет своей миниатюры. Рекомендуемый размер — 1200×630.'
+      ),
       Field::make('textarea', 'crb_theme_counters', 'Счетчики')->set_rows(2),
       Field::make('textarea', 'crb_theme_copyright', 'Копирайт')->set_rows(2),
       Field::make('textarea', 'crb_theme_map_html', 'Карта / HTML код')->set_rows(4),

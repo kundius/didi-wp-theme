@@ -79,9 +79,71 @@ add_action('wp_head', function () {
     echo '<meta property="og:description" content="' . $description . '">' . "\n";
   }
 
-  if (has_post_thumbnail()) {
-    echo '<meta property="og:image" content="' . get_the_post_thumbnail_url(get_the_ID(), 'large') . '" />' . "\n";
-    echo '<meta property="og:image:width" content="1024">' . "\n";
-    echo '<meta property="og:image:height" content="1024">' . "\n";
+  $og_image = '';
+
+  if (is_singular() && has_post_thumbnail()) {
+    $og_image = get_the_post_thumbnail_url(get_the_ID(), 'large');
   }
+
+  if (empty($og_image)) {
+    $crb_og_image = carbon_get_theme_option('crb_theme_og_image');
+
+    if (!empty($crb_og_image)) {
+      $og_image = wp_get_attachment_image_url(intval($crb_og_image), 'large');
+    }
+  }
+
+  if (empty($og_image)) {
+    $og_image = get_site_icon_url();
+  }
+
+  if (!empty($og_image)) {
+    $og_image_meta = wp_getimagesize($og_image);
+
+    echo '<meta property="og:image" content="' . esc_url($og_image) . '" />' . "\n";
+
+    if (!empty($og_image_meta[0]) && !empty($og_image_meta[1])) {
+      echo '<meta property="og:image:width" content="' . intval($og_image_meta[0]) . '">' . "\n";
+      echo '<meta property="og:image:height" content="' . intval($og_image_meta[1]) . '">' . "\n";
+    }
+  }
+});
+
+add_action('wp_head', function () {
+  $site_name = carbon_get_theme_option('crb_theme_site_name');
+
+  if (empty($site_name)) {
+    $site_name = get_bloginfo('name');
+  }
+
+  $phone = carbon_get_theme_option('crb_theme_phone_number');
+  $email = carbon_get_theme_option('crb_theme_email');
+  $address = carbon_get_theme_option('crb_theme_address');
+
+  $organization = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => $site_name,
+    'url' => home_url('/'),
+  ];
+
+  if (!empty($phone)) {
+    $organization['telephone'] = $phone;
+  }
+
+  if (!empty($email)) {
+    $organization['email'] = $email;
+  }
+
+  if (!empty($address)) {
+    $organization['address'] = [
+      '@type' => 'PostalAddress',
+      'streetAddress' => trim(strip_tags($address)),
+      'addressCountry' => 'RU',
+    ];
+  }
+
+  echo '<script type="application/ld+json">' . "\n";
+  echo wp_json_encode($organization, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n";
+  echo '</script>' . "\n";
 });
