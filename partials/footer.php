@@ -1,21 +1,21 @@
-<footer class="footer">
+<footer class="footer" itemscope itemtype="https://schema.org/Organization">
   <div class="container">
     <?php $footer_site_name = carbon_get_theme_option('crb_theme_site_name'); ?>
-    <h2 class="footer__title"><?php echo esc_html(
+    <h2 class="footer__title" itemprop="name"><?php echo esc_html(
       $footer_site_name ?: get_bloginfo('name'),
     ); ?></h2>
 
     <div class="footer__contacts">
       <?php $footer_phone = carbon_get_theme_option('crb_theme_phone_number'); ?>
       <?php if ($footer_phone): ?>
-        <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
+        <a itemprop="telephone" href="tel:<?php echo preg_replace('/[^0-9+]/', '', $footer_phone); ?>">
           <?php echo esc_html($footer_phone); ?>
         </a>
       <?php endif; ?>
 
       <?php $footer_email = carbon_get_theme_option('crb_theme_email'); ?>
       <?php if ($footer_email): ?>
-        <a href="mailto:<?php echo esc_attr($footer_email); ?>">
+        <a itemprop="email" href="mailto:<?php echo esc_attr($footer_email); ?>">
           Email: <?php echo esc_html($footer_email); ?>
         </a>
       <?php endif; ?>
@@ -23,7 +23,9 @@
 
     <?php $footer_address = carbon_get_theme_option('crb_theme_address'); ?>
     <?php if ($footer_address): ?>
-      <div class="footer__address"><?php echo nl2br(esc_html($footer_address)); ?></div>
+      <div class="footer__address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <?php echo nl2br(didi_microdata_kses($footer_address)); ?>
+      </div>
     <?php endif; ?>
 
   </div>

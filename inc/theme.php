@@ -82,6 +82,38 @@ add_shortcode('sitemap', function () {
   return $sitemap;
 });
 
+/**
+ * Allow schema.org microdata attributes and tags inside theme options
+ * (e.g. Address, Working hours, etc.).
+ */
+function didi_microdata_kses($string)
+{
+  // Common attributes allowed on all standard tags
+  $attrs = [
+    'itemprop' => true,
+    'itemscope' => true,
+    'itemtype' => true,
+    'datetime' => true,
+    'class' => true,
+    'id' => true,
+  ];
+
+  $allowed_tags = [
+    'span' => $attrs,
+    'div' => $attrs,
+    'time' => $attrs,
+    'p' => $attrs,
+    'br' => true,
+    'b' => $attrs,
+    'strong' => $attrs,
+    'i' => $attrs,
+    'em' => $attrs,
+    'a' => array_merge($attrs, ['href' => true, 'title' => true, 'target' => true, 'rel' => true]),
+  ];
+
+  return wp_kses($string, $allowed_tags, ['http', 'https', 'mailto', 'tel']);
+}
+
 function get_pagination($query)
 {
   $links = paginate_links([
